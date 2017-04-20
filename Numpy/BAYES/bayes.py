@@ -65,9 +65,7 @@ def trainNB0(trainMatrix,trainCategory):
 
 def classifyNB(vec2Classify,p0Vec,p1Vec,pClass1):
     p1 = sum(vec2Classify * p1Vec) + log(pClass1)
-    print '--------',p1
     p0 = sum(vec2Classify * p0Vec) + log(1.0 - pClass1)
-    print '++++++++',p0
 
     if p1 > p0:
         return 1
@@ -81,15 +79,10 @@ def testingNB():
     for postinDoc in listOPosts:
         trainMat.append(setOfWords2Vec(myVocabList,postinDoc))
     p0V,p1V,pAb = trainNB0(trainMat,listClasses)
-    print p0V
-    print p1V
-    print pAb
 
     testEntry = ['love','my','dalmation']
 
     thisDoc = array(setOfWords2Vec(myVocabList,testEntry))
-    print myVocabList
-    print thisDoc
     print testEntry,'classified as :',classifyNB(thisDoc,p0V,p1V,pAb)
 
     testEntry = ['stupid','garbage']
@@ -98,12 +91,59 @@ def testingNB():
     print testEntry,'classified as :',classifyNB(thisDoc,p0V,p1V,pAb)
 
 
+def textParse(bigString):
+    import re
+    listOfTokens = re.split(r'\W*',bigString)
+    return [tok.lower() for tok in listOfTokens if len(tok) > 0]
+
+def spamTest():
+    docList=[]
+    classList=[]
+    fullText=[]
+    for i in range(1,26):
+        wordList = textParse(open('/Users/yangli/Downloads/machinelearninginaction/Ch04/email/spam/%d.txt' % i).read())
+        docList.append(wordList)
+        fullText.extend(wordList)
+        classList.append(1)
 
 
+        wordList =textParse(open('/Users/yangli/Downloads/machinelearninginaction/Ch04/email/ham/%d.txt' % i).read())
+        docList.append(wordList)
+        fullText.extend(wordList)
+        classList.append(0)
 
+
+    vocabList = createVocabList(docList)
+    trainingSet = range(50); testSet=[]
+
+    #输出测试数据
+    for i in range(10):
+        randIndex = int(random.uniform(0,len(trainingSet)))
+        testSet.append(trainingSet[randIndex])
+        del(trainingSet[randIndex])
+
+    trainMat = []; trainClasses = []
+
+    for docIndex in trainingSet:
+
+        trainMat.append(setOfWords2Vec(vocabList,docList[docIndex]))
+
+        trainClasses.append(classList[docIndex])
+
+    p0V,p1V,pSpam = trainNB0(array(trainMat),array(trainClasses))
+    errorCount = 0
+
+    for docIndex in testSet:
+        wordVector = setOfWords2Vec(vocabList,docList[docIndex])
+        if classifyNB(array(wordVector),p0V,p1V,pSpam) != classList[docIndex]:
+            errorCount += 1
+            print "classification error",docList[docIndex]
+    print 'the error rate is: ', float(errorCount)/len(testSet)
 
 
 if __name__=='__main__':
     listOPosts,listClasses = loadDataSet()
     myVocabList = createVocabList(listOPosts) #去重所有的单词
-    testingNB()
+    # testingNB()
+    spamTest()
+    spamTest()
