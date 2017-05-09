@@ -2,7 +2,7 @@
 import sys
 import time
 
-# workday = {'2017-05-08¡ä:'0', 'ob2¡ä:'mouse', 'ob3¡ä:'printer'}
+workday = {'2017-05-08':'0', '2017-05-09':'1', '2017-05-10':'0'}
 
 
 
