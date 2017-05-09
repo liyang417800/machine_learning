@@ -1,5 +1,5 @@
-# coding=gbk
-import sys
+# -*- coding: utf-8 -*-
+
 import time
 
 import datetime
@@ -2202,7 +2202,6 @@ workday ={'2012-01-01':'0',
 def data_diff(begin_date,end_date): #2017-05-08 10:00:00   2017-05-10 14:00:00
     end_time = time.mktime(time.strptime(end_date, "%Y-%m-%d %H:%M:%S"))
     begin_time = time.mktime(time.strptime(begin_date, "%Y-%m-%d %H:%M:%S"))
-
     end_date1 = []
     begin_date1 =[]
     for i in end_date.split():
@@ -2212,15 +2211,16 @@ def data_diff(begin_date,end_date): #2017-05-08 10:00:00   2017-05-10 14:00:00
 
     end_date_date,end_date_hours = end_date1[0],end_date1[1]
     begin_date_date,begin_date_hours = begin_date1[0],begin_date1[1]
-
-    if end_date_date == begin_date_date:
-        work_hours = (end_time-begin_time)/3600
-    elif end_date_date>begin_date_date:
-        data_days = data_list(begin_date_date,end_date_date)
-        for i in range(len(data_days)-1,-1,-1):
-            if workday.get(data_days[i]) =='0':
-                data_days.pop(i)
-        #删除头尾
+    work_hours = 0
+    try:
+        if end_date_date == begin_date_date:
+            work_hours = (end_time-begin_time)/3600
+        elif end_date_date > begin_date_date:
+            data_days = data_list(begin_date_date,end_date_date)
+            for i in range(len(data_days)-1,-1,-1):
+                if workday.get(data_days[i]) =='0':
+                    data_days.pop(i)
+        #鍒犻櫎澶村熬
         del data_days[0]
         data_days.pop()
 
@@ -2231,9 +2231,10 @@ def data_diff(begin_date,end_date): #2017-05-08 10:00:00   2017-05-10 14:00:00
 
 
         work_hours = len(data_days)*9 + (begin_data_hours-begin_time)/3600 + (end_time - end_data_hours)/3600
-    elif end_date_date<begin_date_date :
-        print "结束时间需要大于开始时间"
-    return work_hours
+    except:
+        print "杈撳叆鏁版嵁鏈夎"
+    return round(work_hours/9,2)
+
 
 
 def data_list(begin_date,end_date):
@@ -2247,4 +2248,4 @@ def data_list(begin_date,end_date):
     return date_list
 
 if __name__=='__main__':
-    print data_diff('2017-05-13 10:00:00','2017-05-12 14:00:00')
+    print data_diff('2017-05-08 10:00:00','2017-05-12 14:00:00')

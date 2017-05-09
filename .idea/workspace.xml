@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74075eba-c56a-4084-b027-aa3709554c84" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/machine_learning.iml" afterPath="$PROJECT_DIR$/.idea/machine_learning.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day_diff.py" afterPath="$PROJECT_DIR$/day_diff.py" />
     </list>
@@ -27,7 +25,7 @@
     <SUITE FILE_PATH="coverage/machine_learning$email.coverage" NAME="email Coverage Results" MODIFIED="1492416927693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Numpy/BAYES" />
     <SUITE FILE_PATH="coverage/machine_learning$tree.coverage" NAME="tree Coverage Results" MODIFIED="1491990461504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Numpy/TREE" />
     <SUITE FILE_PATH="coverage/machine_learning$treePlotter.coverage" NAME="treePlotter Coverage Results" MODIFIED="1491968298792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Numpy/TREE" />
-    <SUITE FILE_PATH="coverage/machine_learning$day_diff.coverage" NAME="day_diff Coverage Results" MODIFIED="1494336351006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/machine_learning$day_diff.coverage" NAME="day_diff Coverage Results" MODIFIED="1494337900408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -41,8 +39,8 @@
       <file leaf-file-name="svmMLiA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Numpy/SVM/svmMLiA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1235">
-              <caret line="65" column="46" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="46" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="12" />
               <folding>
                 <element signature="e#13#26#0" expanded="true" />
               </folding>
@@ -53,8 +51,8 @@
       <file leaf-file-name="tree.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Numpy/TREE/tree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="159">
+              <caret line="69" column="13" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -63,8 +61,8 @@
       <file leaf-file-name="treePlotter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Numpy/TREE/treePlotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="31" column="20" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="20" />
+            <state relative-caret-position="608">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -83,11 +81,11 @@
       <file leaf-file-name="day_diff.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/day_diff.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="2236" column="0" selection-start-line="2236" selection-start-column="0" selection-end-line="2236" selection-end-column="0" />
+            <state relative-caret-position="133">
+              <caret line="2198" column="0" selection-start-line="2198" selection-start-column="0" selection-end-line="2198" selection-end-column="0" />
               <folding>
-                <element signature="e#13#23#0" expanded="true" />
-                <element signature="e#63#39519#0" expanded="false" />
+                <element signature="e#25#36#0" expanded="true" />
+                <element signature="e#64#39520#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -182,8 +180,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="394" />
-    <option name="y" value="63" />
+    <option name="x" value="478" />
+    <option name="y" value="41" />
     <option name="width" value="1400" />
     <option name="height" value="929" />
   </component>
@@ -212,6 +210,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -319,7 +318,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -731,14 +729,21 @@
       <option name="project" value="LOCAL" />
       <updated>1494252864989</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="svm">
+      <created>1494336396549</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1494336396549</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="394" y="63" width="1400" height="929" extended-state="0" />
+    <frame x="478" y="41" width="1400" height="929" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22537313" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18208955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42258066" sideWeight="0.5121693" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -810,6 +815,57 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/day_diff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#36#0" expanded="true" />
+            <element signature="e#64#39520#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Numpy/BAYES/bayes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2565">
+          <caret line="135" column="28" selection-start-line="135" selection-start-column="28" selection-end-line="135" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Numpy/BAYES/email.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Numpy/BAYES/feedparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Numpy/LOGISTIC/horseColicTest.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Numpy/LOGISTIC/logRegres.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Numpy/SVM/svmMLiA.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1235">
@@ -849,8 +905,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13#23#0" expanded="true" />
-            <element signature="e#63#39519#0" expanded="false" />
+            <element signature="e#25#36#0" expanded="true" />
+            <element signature="e#64#39520#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -910,8 +966,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13#23#0" expanded="true" />
-            <element signature="e#63#39519#0" expanded="false" />
+            <element signature="e#25#36#0" expanded="true" />
+            <element signature="e#64#39520#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -931,8 +987,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13#23#0" expanded="true" />
-            <element signature="e#63#39519#0" expanded="false" />
+            <element signature="e#25#36#0" expanded="true" />
+            <element signature="e#64#39520#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -952,8 +1008,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#13#23#0" expanded="true" />
-            <element signature="e#63#39519#0" expanded="false" />
+            <element signature="e#25#36#0" expanded="true" />
+            <element signature="e#64#39520#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1116,28 +1172,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Numpy/SVM/svmMLiA.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1235">
-          <caret line="65" column="46" selection-start-line="65" selection-start-column="37" selection-end-line="65" selection-end-column="46" />
-          <folding>
-            <element signature="e#13#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Numpy/TREE/tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        <state relative-caret-position="159">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Numpy/TREE/treePlotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="20" />
+        <state relative-caret-position="608">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1150,13 +1196,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Numpy/SVM/svmMLiA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="12" />
+          <folding>
+            <element signature="e#13#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/day_diff.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="2236" column="0" selection-start-line="2236" selection-start-column="0" selection-end-line="2236" selection-end-column="0" />
+        <state relative-caret-position="133">
+          <caret line="2198" column="0" selection-start-line="2198" selection-start-column="0" selection-end-line="2198" selection-end-column="0" />
           <folding>
-            <element signature="e#13#23#0" expanded="true" />
-            <element signature="e#63#39519#0" expanded="false" />
+            <element signature="e#25#36#0" expanded="true" />
+            <element signature="e#64#39520#0" expanded="false" />
           </folding>
         </state>
       </provider>
