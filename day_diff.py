@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-
+#!/usr/bin/env python
 import time
 
 import datetime
+import sys
 
 workday ={'2012-01-01':'0',
 '2012-01-02':'0',
@@ -2220,7 +2221,7 @@ def data_diff(begin_date,end_date): #2017-05-08 10:00:00   2017-05-10 14:00:00
             for i in range(len(data_days)-1,-1,-1):
                 if workday.get(data_days[i]) =='0':
                     data_days.pop(i)
-        #删除头尾
+        #鍒犻櫎澶村熬
         del data_days[0]
         data_days.pop()
 
@@ -2247,5 +2248,14 @@ def data_list(begin_date,end_date):
         begin_date += datetime.timedelta(days=1)
     return date_list
 
-if __name__=='__main__':
-    print data_diff('2017-05-08 10:00:00','2017-05-12 14:00:00')
+
+for line in sys.stdin:
+    line = line.strip()
+    begin_date,end_date = line.split('\t')
+    print data_diff(begin_date,end_date)
+
+
+
+
+# if __name__=='__main__':
+#     print data_diff('2017-05-08 10:00:00','2017-05-12 14:00:00')
