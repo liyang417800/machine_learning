@@ -2218,20 +2218,24 @@ def data_diff(begin_date,end_date): #2017-05-08 10:00:00   2017-05-10 14:00:00
             work_hours = (end_time-begin_time)/3600
         elif end_date_date > begin_date_date:
             data_days = data_list(begin_date_date,end_date_date)
+            print range(len(data_days)-1,-1,-1)
             for i in range(len(data_days)-1,-1,-1):
                 if workday.get(data_days[i]) =='0':
                     data_days.pop(i)
-        #鍒犻櫎澶村熬
-        del data_days[0]
-        data_days.pop()
+                    print range(len(data_days)-1,-1,-1)
 
-        end_hours = end_date_date+ ' '+'09:30:00'
-        end_data_hours = time.mktime(time.strptime(end_hours, "%Y-%m-%d %H:%M:%S"))#2017-05-12 09:30:00
-        begin_hours = begin_date_date + ' ' + '18:30:00'
-        begin_data_hours = time.mktime(time.strptime(begin_hours, "%Y-%m-%d %H:%M:%S"))#'2017-05-08 18:30:00'
+            #鍒犻櫎澶村熬
+            del data_days[0]
+            data_days.pop()
+
+            end_hours = end_date_date+ ' '+'09:30:00'
+            end_data_hours = time.mktime(time.strptime(end_hours, "%Y-%m-%d %H:%M:%S"))#2017-05-12 09:30:00
+            begin_hours = begin_date_date + ' ' + '18:30:00'
+            begin_data_hours = time.mktime(time.strptime(begin_hours, "%Y-%m-%d %H:%M:%S"))#'2017-05-08 18:30:00'
 
 
-        work_hours = len(data_days)*9 + (begin_data_hours-begin_time)/3600 + (end_time - end_data_hours)/3600
+            work_hours = len(data_days)*9 + (begin_data_hours-begin_time)/3600 + (end_time - end_data_hours)/3600
+
     except:
         print "输入数据有误"
     return round(work_hours/9,2)
@@ -2249,13 +2253,15 @@ def data_list(begin_date,end_date):
     return date_list
 
 
-for line in sys.stdin:
-    line = line.strip()
-    begin_date,end_date = line.split('\t')
-    print data_diff(begin_date,end_date)
+# for line in sys.stdin:
+#     line = line.strip()
+#     begin_date,end_date = line.split('\t')
+#     print data_diff(begin_date,end_date)
 
 
 
 
-# if __name__=='__main__':
-#     print data_diff('2017-05-08 10:00:00','2017-05-12 14:00:00')
+if __name__=='__main__':
+    print data_diff('2017-05-06 10:00:00','2017-05-07 14:00:00')
+
+
