@@ -9,19 +9,29 @@ def createDataSet():
     labels = ['A','A','B','B']
     return group,labels
 
+#KNN算法实现
+#用于分类的输人向量是inX,训练样本dataSet,标签向量labels,选择最邻近的数目k
 def classify0(inX, dataSet, labels, k):
-    dataSetSize = dataSet.shape[0]
+    dataSetSize = dataSet.shape[0] #4
+    print inX
+    print tile(inX, (dataSetSize,1))
     diffMat = tile(inX, (dataSetSize,1)) - dataSet
+    print diffMat
     sqDiffMat = diffMat**2
+    print sqDiffMat
     sqDistances = sqDiffMat.sum(axis=1)
+    print sqDistances
     distances = sqDistances**0.5
+    print distances
     sortedDistIndicies = distances.argsort()
+    print sortedDistIndicies
     classCount={}
     for i in range(k):
         voteIlabel = labels[sortedDistIndicies[i]]
-        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1
-    sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
-    return sortedClassCount[0][0]
+        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 # 对于选举值进行加1的操作
+        #对于分类的标签和标签数量排序,降序
+        sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
+    return sortedClassCount[0][0]  #取出第一行第一列,该值为预测的标签
 
 def file2matrix(filename):
     fr = open(filename)
@@ -83,20 +93,21 @@ def datingClassTest():
 
 
 if __name__ == '__main__':
-    # group,labels = createDataSet()
+    group,labels = createDataSet()
     # print group
     # print labels
     # print group.shape[0]
     # a=[[1,2,3],[5,4]]
+    # print a
     # print tile(a,(4,1))
-    # print classify0([0,0],group,labels,3)
-    datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
+    classify0([0,0],group,labels,3)
+    # datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
     # print datingDataMat,datingLabels[0:20]
     # fig = plt.figure()
     # ax = fig.add_subplot(111)
     # ax.scatter(datingDataMat[:,1],datingDataMat[:,2],15.0*array(datingLabels),15.0*array(datingLabels))
     # plt.show()
-    normMat,ranges,minVals = autoNorm(datingDataMat)
+    # normMat,ranges,minVals = autoNorm(datingDataMat)
     # print normMat,ranges,minVals
     # datingClassTest()
-    classifyPerson()
+    # classifyPerson()
