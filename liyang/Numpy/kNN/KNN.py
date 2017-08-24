@@ -50,6 +50,7 @@ def autoNorm(dataSet):
     #构建1000,3为0的数组
     normDataSet = zeros(shape(dataSet))
     m = dataSet.shape[0]
+    print tile(minVals, (m,1))
     normDataSet = dataSet - tile(minVals, (m,1))
     normDataSet = normDataSet/tile(ranges, (m,1))   #element wise divide
     return normDataSet, ranges, minVals
