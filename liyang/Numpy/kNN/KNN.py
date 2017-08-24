@@ -1,4 +1,4 @@
-# coding=gbk
+#coding:utf-8
 from numpy import *
 import operator
 import matplotlib
@@ -9,34 +9,28 @@ def createDataSet():
     labels = ['A','A','B','B']
     return group,labels
 
-#KNNËã·¨ÊµÏÖ
-#ÓÃÓÚ·ÖÀàµÄÊäÈËÏòÁ¿ÊÇinX,ÑµÁ·Ñù±¾dataSet,±êÇ©ÏòÁ¿labels,Ñ¡Ôñ×îÁÚ½üµÄÊıÄ¿k
+#KNNç®—æ³•å®ç°
+#ç”¨äºåˆ†ç±»çš„è¾“äººå‘é‡æ˜¯inX,è®­ç»ƒæ ·æœ¬dataSet,æ ‡ç­¾å‘é‡labels,é€‰æ‹©æœ€é‚»è¿‘çš„æ•°ç›®k
 def classify0(inX, dataSet, labels, k):
     dataSetSize = dataSet.shape[0] #4
-    print inX
-    print tile(inX, (dataSetSize,1))
     diffMat = tile(inX, (dataSetSize,1)) - dataSet
-    print diffMat
     sqDiffMat = diffMat**2
-    print sqDiffMat
     sqDistances = sqDiffMat.sum(axis=1)
-    print sqDistances
     distances = sqDistances**0.5
-    print distances
     sortedDistIndicies = distances.argsort()
-    print sortedDistIndicies
     classCount={}
     for i in range(k):
         voteIlabel = labels[sortedDistIndicies[i]]
-        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 # ¶ÔÓÚÑ¡¾ÙÖµ½øĞĞ¼Ó1µÄ²Ù×÷
-        #¶ÔÓÚ·ÖÀàµÄ±êÇ©ºÍ±êÇ©ÊıÁ¿ÅÅĞò,½µĞò
+        classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 # å¯¹äºé€‰ä¸¾å€¼è¿›è¡ŒåŠ 1çš„æ“ä½œ
+        #å¯¹äºåˆ†ç±»çš„æ ‡ç­¾å’Œæ ‡ç­¾æ•°é‡æ’åº,é™åº
         sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
-    return sortedClassCount[0][0]  #È¡³öµÚÒ»ĞĞµÚÒ»ÁĞ,¸ÃÖµÎªÔ¤²âµÄ±êÇ©
+    return sortedClassCount[0][0]  #å–å‡ºç¬¬ä¸€è¡Œç¬¬ä¸€åˆ—,è¯¥å€¼ä¸ºé¢„æµ‹çš„æ ‡ç­¾
 
 def file2matrix(filename):
     fr = open(filename)
     arrayOLines = fr.readlines()
     numberOfLines = len(arrayOLines)
+    #æ„é€ å’Œæ–‡ä»¶é•¿åº¦ä¸€æ ·çš„ä¸º0çš„æ•°ç»„
     returnMat = zeros((numberOfLines,3))
     classLabelVector = []
     index = 0
@@ -51,7 +45,9 @@ def file2matrix(filename):
 def autoNorm(dataSet):
     minVals = dataSet.min(0)
     maxVals = dataSet.max(0)
+    print minVals,maxVals
     ranges = maxVals - minVals
+    #æ„å»º1000,3ä¸º0çš„æ•°ç»„
     normDataSet = zeros(shape(dataSet))
     m = dataSet.shape[0]
     normDataSet = dataSet - tile(minVals, (m,1))
@@ -89,25 +85,22 @@ def datingClassTest():
 
 
 
-
-
-
 if __name__ == '__main__':
     group,labels = createDataSet()
-    # print group
-    # print labels
     # print group.shape[0]
     # a=[[1,2,3],[5,4]]
     # print a
     # print tile(a,(4,1))
-    classify0([0,0],group,labels,3)
-    # datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
+    # print classify0([0,0],group,labels,3)
+    datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
     # print datingDataMat,datingLabels[0:20]
+
+    #ç”»å›¾
     # fig = plt.figure()
     # ax = fig.add_subplot(111)
     # ax.scatter(datingDataMat[:,1],datingDataMat[:,2],15.0*array(datingLabels),15.0*array(datingLabels))
     # plt.show()
-    # normMat,ranges,minVals = autoNorm(datingDataMat)
+    normMat,ranges,minVals = autoNorm(datingDataMat)
     # print normMat,ranges,minVals
     # datingClassTest()
     # classifyPerson()

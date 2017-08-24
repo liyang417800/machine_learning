@@ -1,7 +1,7 @@
 # coding=gbk
+import operator
 from math import log
 
-import operator
 import treePlotter
 
 
