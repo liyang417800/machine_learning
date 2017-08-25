@@ -31,14 +31,14 @@ def file2matrix(filename):
     arrayOLines = fr.readlines()
     numberOfLines = len(arrayOLines)
     #构造和文件长度一样的为0的数组
-    returnMat = zeros((numberOfLines,3))
+    returnMat = zeros((numberOfLines,9))
     classLabelVector = []
     index = 0
     for line in arrayOLines:
         line = line.strip()
-        listFromLine = line.split('\t')
-        print listFromLine
-        returnMat[index,:] = listFromLine[0:3]
+        listFromLine = line.split(',')
+        # print listFromLine
+        returnMat[index,:] = listFromLine[0:9]
         classLabelVector.append(int(listFromLine[-1]))
         index +=1
     return returnMat,classLabelVector
@@ -71,7 +71,7 @@ def classifyPerson():
 
 def datingClassTest():
     hoRatio = 0.10      #hold out 10%
-    datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')       #load data setfrom file
+    datingDataMat,datingLabels = file2matrix('knn_ism4.csv')       #load data setfrom file
     normMat, ranges, minVals = autoNorm(datingDataMat)
     m = normMat.shape[0]
     numTestVecs = int(m*hoRatio) #100条测试数据
@@ -90,20 +90,20 @@ def datingClassTest():
 
 
 if __name__ == '__main__':
-    group,labels = createDataSet()
+    # group,labels = createDataSet()
     # print group.shape[0]
     # a=[[1,2,3],[5,4]]
     # print a
     # print tile(a,(4,1))
     # print classify0([0,0],group,labels,3)
-    datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
+    datingDataMat,datingLabels = file2matrix('knn_ism4.csv')
     # print datingDataMat,datingLabels[0:20]
 
     #画图
-    # fig = plt.figure()
-    # ax = fig.add_subplot(111)
-    # ax.scatter(datingDataMat[:,1],datingDataMat[:,2],15.0*array(datingLabels),15.0*array(datingLabels))
-    # plt.show()
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.scatter(datingDataMat[:,2],datingDataMat[:,3],15.0*array(datingLabels),15.0*array(datingLabels))
+    plt.show()
     normMat,ranges,minVals = autoNorm(datingDataMat)
     datingClassTest()
     # print normMat
