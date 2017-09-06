@@ -64,7 +64,7 @@ def trainNB0(trainMatrix,trainCategory):
     p0Vect = log(p0Num/p0Denom)
     return p0Vect,p1Vect,pAbusive
 
-
+#判断1和0的概率,返回更大概率的情况
 def classifyNB(vec2Classify,p0Vec,p1Vec,pClass1):
     p1 = sum(vec2Classify * p1Vec) + log(pClass1)
     p0 = sum(vec2Classify * p0Vec) + log(1.0 - pClass1)
@@ -112,8 +112,13 @@ def spamTest():
         fullText.extend(wordList)
         classList.append(0)
 
+    #合并所有的字符并且去重
     vocabList = createVocabList(docList)
     trainingSet = range(50); testSet=[]
+
+    # print vocabList
+    # print fullText
+    # print classList
 
     #输出测试数据
     for i in range(10):
@@ -121,19 +126,21 @@ def spamTest():
         testSet.append(trainingSet[randIndex])
         del(trainingSet[randIndex])
 
+
     trainMat = []; trainClasses = []
 
     for docIndex in trainingSet:
-
+        #判断一个list中所有字符在整个去重集合中是否出现(词向量)
         trainMat.append(setOfWords2Vec(vocabList,docList[docIndex]))
 
         trainClasses.append(classList[docIndex])
-
+    #训练函数
     p0V,p1V,pSpam = trainNB0(array(trainMat),array(trainClasses))
     errorCount = 0
 
     for docIndex in testSet:
         wordVector = setOfWords2Vec(vocabList,docList[docIndex])
+        #判断1和0的概率,返回更大概率的情况
         if classifyNB(array(wordVector),p0V,p1V,pSpam) != classList[docIndex]:
             errorCount += 1
             print "classification error",docList[docIndex]
@@ -153,7 +160,7 @@ if __name__=='__main__':
     p0V,p1V,pAb = trainNB0(trainMat,listClasses)
     # print p0V,p1V,pAb
 
-    testingNB()
-    # spamTest()
+    # testingNB()
+    spamTest()
     # spamTest()
 
