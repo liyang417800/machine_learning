@@ -41,15 +41,15 @@ def bagOfWord2VecMN(vocabList,inputSet):
 def trainNB0(trainMatrix,trainCategory):
     numTrainDocs = len(trainMatrix)  #所有list的数量,list长度为6
     numWords = len(trainMatrix[0])  #一个list的长度,长度为32
-    pAbusive = sum(trainCategory) / float(numTrainDocs)  # 3/6
-    # p0Num = zeros(numWords)
-    # p1Num = zeros(numWords)
+    pAbusive = sum(trainCategory) / float(numTrainDocs)  # 3/6  求出是坏的概率
+    p0Num = zeros(numWords)
+    p1Num = zeros(numWords)
 
-    p0Num = ones(numWords)
-    p1Num = ones(numWords)
+    # p0Num = ones(numWords)
+    # p1Num = ones(numWords)
 
-    # p0Denom = 0.0; p1Denom = 0.0
-    p0Denom = 2.0; p1Denom = 2.0
+    p0Denom = 0.0; p1Denom = 0.0
+    # p0Denom = 2.0; p1Denom = 2.0
     for i in range(numTrainDocs):  #从0开始,计算每个类目的词条的计数总和
         if trainCategory[i] == 1:
             p1Num += trainMatrix[i]
@@ -58,10 +58,10 @@ def trainNB0(trainMatrix,trainCategory):
             p0Num += trainMatrix[i]
             p0Denom += sum(trainMatrix[i])
 
-    # p1Vect = p1Num/p1Denom
-    # p0Vect = p0Num/p0Denom
-    p1Vect = log(p1Num/p1Denom)
-    p0Vect = log(p0Num/p0Denom)
+    p1Vect = p1Num/p1Denom
+    p0Vect = p0Num/p0Denom
+    # p1Vect = log(p1Num/p1Denom)
+    # p0Vect = log(p0Num/p0Denom)
     return p0Vect,p1Vect,pAbusive
 
 #判断1和0的概率,返回更大概率的情况
@@ -77,6 +77,7 @@ def classifyNB(vec2Classify,p0Vec,p1Vec,pClass1):
 def testingNB():
     listOPosts,listClasses = loadDataSet()
     myVocabList = createVocabList(listOPosts)
+    print myVocabList
     trainMat = []
     for postinDoc in listOPosts:
         trainMat.append(setOfWords2Vec(myVocabList,postinDoc))
@@ -86,6 +87,7 @@ def testingNB():
     testEntry = ['love','my','dalmation']
 
     thisDoc = array(setOfWords2Vec(myVocabList,testEntry))
+    print thisDoc
     print testEntry,'classified as :',classifyNB(thisDoc,p0V,p1V,pAb)
 
     testEntry = ['aaa','bbb']
@@ -150,17 +152,18 @@ def spamTest():
 if __name__=='__main__':
     listOPosts,listClasses = loadDataSet()
     myVocabList = createVocabList(listOPosts)
+    print myVocabList
+    # print myVocabList
     trainMat = []
     for postinDoc in listOPosts:
         trainMat.append(setOfWords2Vec(myVocabList,postinDoc))
     # print trainMat
-    # print len(trainMat)
     # print zeros(32)
     # print sum(listClasses)
     p0V,p1V,pAb = trainNB0(trainMat,listClasses)
     # print p0V,p1V,pAb
 
     # testingNB()
-    spamTest()
+    # spamTest()
     # spamTest()
 

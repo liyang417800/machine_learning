@@ -1,23 +1,23 @@
-# coding=gbk
+#coding:utf-8
 import operator
 from math import log
 
 import treePlotter
 
-
+#è®¡ç®—ç†µ
 def calcShannonEnt(dataSet):
     numEntries = len(dataSet)
     # print numEntries
     labelCounts = {}
     for featVec in dataSet:
         currentLbel = featVec[-1]
-        if currentLbel not in labelCounts.keys():  #´Ó0¿ªÊ¼¼ÆÊıĞÂµÄÀà
+        if currentLbel not in labelCounts.keys():  #ä»0å¼€å§‹è®¡æ•°æ–°çš„ç±»
             labelCounts[currentLbel] = 0
         labelCounts[currentLbel] += 1
     shannonEnt = 0.0
     for key in labelCounts:
         prob = float(labelCounts[key])/numEntries
-        shannonEnt -=prob * log(prob,2)  #logÒÔ2Îªµ×1µÄ¶ÔÊıÎª0
+        shannonEnt -=prob * log(prob,2)  #logä»¥2ä¸ºåº•1çš„å¯¹æ•°ä¸º0
     return shannonEnt
 
 def createDataSet():
@@ -29,6 +29,8 @@ def createDataSet():
     labels = ['no surfacing','flippers']
     return dataSet,labels
 
+
+#æŒ‰ç…§listä½ç½®å’Œvalueè·å–å¯¹åº”çš„å€¼
 def splitDataSet(dataSet,axis,value):
     retDataSet = []
     for featVec in dataSet:
@@ -37,21 +39,22 @@ def splitDataSet(dataSet,axis,value):
             reducedFeatVec.extend(featVec[axis+1:])
             retDataSet.append(reducedFeatVec)
     return retDataSet
-
+#é€‰å‡ºæœ€å¥½çš„feature
 def chooseBestFeatureToSplit(dataSet):
     numFeatures = len(dataSet[0]) - 1      #the last column is used for the labels
-    baseEntropy = calcShannonEnt(dataSet)  #Ô­Ê¼ìØ0.970950594455
-
+    baseEntropy = calcShannonEnt(dataSet)  #åŸå§‹ç†µ0.970950594455
     bestInfoGain = 0.0; bestFeature = -1
-    for i in range(numFeatures):        #iterate over all the features
+    for i in range(numFeatures):        #featuresæ•°é‡ä¸º2
         featList = [example[i] for example in dataSet]#create a list of all the examples of this feature
+        #[1, 1, 1, 0, 0]
         uniqueVals = set(featList)       #get a set of unique values
         newEntropy = 0.0
+        #è®¡ç®—ä¿¡æ¯ç†µ
         for value in uniqueVals:
-            subDataSet = splitDataSet(dataSet, i, value)
+            subDataSet = splitDataSet(dataSet, i, value) #ç¬¬ä¸€æ¬¡ (dataSet,0,1)
             prob = len(subDataSet)/float(len(dataSet))
             newEntropy += prob * calcShannonEnt(subDataSet)
-        infoGain = baseEntropy - newEntropy     #calculate the info gain; ie reduction in entropy
+        infoGain = baseEntropy - newEntropy     #è®¡ç®—ä¿¡æ¯å¢ç›Š
         if (infoGain > bestInfoGain):       #compare this to the best gain so far
             bestInfoGain = infoGain         #if better than current best, set to best
             bestFeature = i
@@ -74,12 +77,12 @@ def createTree(dataSet,labels):
     if len(dataSet[0]) == 1:
         return majorityCnt(classList)
 
-    bestFeat = chooseBestFeatureToSplit(dataSet)   #Ñ¡È¡×îºÃµÄÌØÕ÷,±¾ÊµÀıÎª[0],µÚÒ»¸öÌØÕ÷
-    bestFeatLabel = lables[bestFeat]       #Ñ¡È¡×îºÃÌØÕ÷µÄlabel
+    bestFeat = chooseBestFeatureToSplit(dataSet)   #é€‰å–æœ€å¥½çš„ç‰¹å¾,æœ¬å®ä¾‹ä¸º[0],ç¬¬ä¸€ä¸ªç‰¹å¾
+    bestFeatLabel = lables[bestFeat]       #é€‰å–æœ€å¥½ç‰¹å¾çš„label
 
     myTree = {bestFeatLabel:{}}
     del(labels[bestFeat])
-    featValues = [example[bestFeat] for example in dataSet]  #È¡³öÌØÕ÷[0]µÄËùÓĞÖµ
+    featValues = [example[bestFeat] for example in dataSet]  #å–å‡ºç‰¹å¾[0]çš„æ‰€æœ‰å€¼
 
 
     uniqueVals = set(featValues)
@@ -132,17 +135,20 @@ def grabTree(filename):
 
 if __name__=='__main__':
     myDat,lables = createDataSet()
+    print myDat,lables
+    #ç†µç­‰äº0.970950594455
     # print calcShannonEnt(myDat)
-    # print chooseBestFeatureToSplit(myDat)
-    myTree = treePlotter.retrieveTree(0)
-    storeTree(myTree,'classifierStorage.txt')
-    grabTree('classifierStorage.txt')
-    fr = open('lenses.txt')
-    lenses = [inst.strip().split() for inst in fr.readlines()]
-    print(lenses)
-    lensesLabels = ['age','prescript','astigmacit','tearRate']
-    lensesTree = createTree(lenses,lensesLabels)
-    print lensesTree
+    print splitDataSet(myDat,0,1)
+    print chooseBestFeatureToSplit(myDat)
+    # myTree = treePlotter.retrieveTree(0)
+    # storeTree(myTree,'classifierStorage.txt')
+    # grabTree('classifierStorage.txt')
+    # fr = open('lenses.txt')
+    # lenses = [inst.strip().split() for inst in fr.readlines()]
+    # print(lenses)
+    # lensesLabels = ['age','prescript','astigmacit','tearRate']
+    # lensesTree = createTree(lenses,lensesLabels)
+    # print lensesTree
 
 
 
