@@ -7,7 +7,6 @@ import treePlotter
 #计算熵
 def calcShannonEnt(dataSet):
     numEntries = len(dataSet)
-    # print numEntries
     labelCounts = {}
     for featVec in dataSet:
         currentLbel = featVec[-1]
@@ -71,39 +70,60 @@ def majorityCnt(classList):
 
 def createTree(dataSet,labels):
     classList = [example[-1] for example in dataSet]
+    print classList
+    print classList.count(classList[0])
+    print len(classList)
     if classList.count(classList[0]) == len(classList):
         return classList[0]
-
+    print dataSet[0]
+    print len(dataSet[0])
     if len(dataSet[0]) == 1:
         return majorityCnt(classList)
 
     bestFeat = chooseBestFeatureToSplit(dataSet)   #选取最好的特征,本实例为[0],第一个特征
-    bestFeatLabel = lables[bestFeat]       #选取最好特征的label
+    print bestFeat
+    bestFeatLabel = labels[bestFeat]       #选取最好特征的label
+    print bestFeatLabel
 
-    myTree = {bestFeatLabel:{}}
-    del(labels[bestFeat])
+    myTree = {bestFeatLabel:{}}    #构造字典格式{'no surfacing': {}}
+    print 'myTree:'+str(myTree)
+    del(labels[bestFeat])          #删除这次的labels 'no surfacing'
     featValues = [example[bestFeat] for example in dataSet]  #取出特征[0]的所有值
+    print featValues
 
 
     uniqueVals = set(featValues)
+    print uniqueVals
     for value in uniqueVals:
-        subLabels = lables[:]
-        # print subLabels
-        # print bestFeatLabel
-        # print dataSet
-        # print bestFeat
-        # print value
-        # print subLabels
+        subLabels = labels[:]
+        print 'subLabels:'+str(subLabels)
+        print 'bestFeatLabel:' +str(bestFeatLabel)
+        print dataSet
+        print bestFeat
+        print value
+        # print splitDataSet(dataSet,bestFeat,value)
+        #[[1, 1, 'yes'], [1, 1, 'yes'], [1, 0, 'no'], [0, 1, 'no'], [0, 1, 'no']]
+        #0
+        #0
+        print splitDataSet(dataSet,bestFeat,value)
         myTree[bestFeatLabel][value] = createTree(splitDataSet(dataSet,bestFeat,value),subLabels)
-        #{'no surfacing': {0: 'no', 1: {'flippers': {0: 'no', 1: 'yes'}}}}
+        #第一次  {'no surfacing': {0: 'no'}}
+        #第二次 {'no surfacing': {0: 'no', 1: {'flippers': {0: 'no', 1: 'yes'}}}}
+        print
     return myTree
 
 def classify(inputTree,featLabels,testVec):
+    print inputTree.keys()
     firstStr = inputTree.keys()[0]
     secondDict = inputTree[firstStr]
+    #{0: 'no', 1: {'flippers': {0: 'no', 1: 'yes'}}}
+    print 'featLabels.index(firstStr):'+ str(featLabels.index(firstStr))
     featIndex = featLabels.index(firstStr)
+    print 'testVec[featIndex]:'+ str(testVec[featIndex])
     key = testVec[featIndex]
+
     valueOfFeat = secondDict[key]
+    print valueOfFeat
     if isinstance(valueOfFeat, dict):
         classLabel = classify(valueOfFeat, featLabels, testVec)
     else:
@@ -136,11 +156,18 @@ def grabTree(filename):
 if __name__=='__main__':
     myDat,lables = createDataSet()
     print myDat,lables
-    #熵等于0.970950594455
-    # print calcShannonEnt(myDat)
-    print splitDataSet(myDat,0,1)
+    # #熵等于0.970950594455
+    print calcShannonEnt(myDat)
+    print splitDataSet(myDat,0,0)
     print chooseBestFeatureToSplit(myDat)
-    # myTree = treePlotter.retrieveTree(0)
+    # # myTree = createTree(myDat,lables)
+    # # print myTree
+    # myTree1 = treePlotter.retrieveTree(0)
+    # print myTree1
+    # print lables
+    # print classify(myTree1,lables,[1,1])
+    #
+    # print myTree
     # storeTree(myTree,'classifierStorage.txt')
     # grabTree('classifierStorage.txt')
     # fr = open('lenses.txt')

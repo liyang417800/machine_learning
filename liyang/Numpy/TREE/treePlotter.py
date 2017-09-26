@@ -23,13 +23,20 @@ def createPlot():
 #{'no surfacing': {0: 'no', 1: {'flippers': {0: 'no', 1: 'yes'}}}
 def getNumLeafs(myTree):
     numLeafs = 0
+    print myTree.keys()
     firstStr = myTree.keys()[0]
+    print 'firstStr:'+str(firstStr)
     secondDict = myTree[firstStr]
+    print 'secondDict:'+str(secondDict)
+    print 'secondDict.keys:'+str(secondDict.keys())
     for key in secondDict.keys():
+        print secondDict[key]
+        print type(secondDict[key]).__name__
         if type(secondDict[key]).__name__ == 'dict':
             numLeafs += getNumLeafs(secondDict[key])
         else:
             numLeafs += 1
+            print numLeafs
     return numLeafs
 
 def getTreeDepth(myTree):
@@ -61,7 +68,8 @@ def retrieveTree(i):
 
 
 if __name__=='__main__':
-    # createPlot()
+    createPlot()
     myTree=retrieveTree(0)
+    print myTree
     print getNumLeafs(myTree)
     print getTreeDepth(myTree)
