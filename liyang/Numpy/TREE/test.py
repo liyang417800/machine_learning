@@ -1,2 +1,1 @@
-list2 = [1, 2, 3, 4, 5, 6, 7 ]
-print list2[1:]
+#coding:utf-8fr = open('is_m4.txt')lenses = [inst.strip().split() for inst in fr.readlines()]print lenses# aaa=[]# for inst in fr.readlines():#     aaa.append(inst)# print '\n'.join(aaa)# print str(lenses).decode('string_escape')
