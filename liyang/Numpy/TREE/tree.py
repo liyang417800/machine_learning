@@ -21,14 +21,14 @@ def calcShannonEnt(dataSet):
         shannonEnt -=prob * log(prob,2)  #log以2为底1的对数为0
     return shannonEnt
 
-def createDataSet():
-    dataSet = [[1,1,'yes'],
-               [1,1,'yes'],
-               [1,0,'no'],
-               [0,1,'no'],
-               [0,1,'no']]
-    labels = ['no surfacing','flippers']
-    return dataSet,labels
+# def createDataSet():
+#     dataSet = [[1,1,'yes'],
+#                [1,1,'yes'],
+#                [1,0,'no'],
+#                [0,1,'no'],
+#                [0,1,'no']]
+#     labels = ['no surfacing','flippers']
+#     return dataSet,labels
 
 
 #按照list位置和value获取对应的值
@@ -198,7 +198,7 @@ def datingClassTest():
         # print datingDataMat[i]
         # print classifierResult
         print "the classifier came back with: %d, the real answer is: %d" % (int(classifierResult), int(datingLabels[i]))
-        if (classifierResult != datingLabels[i]):
+        if (int(classifierResult) != int(datingLabels[i])):
             errorCount += 1.0
             print '---------------------------'
     print "the total error rate is: %f" % (errorCount/float(numlen))
@@ -224,8 +224,8 @@ if __name__=='__main__':
     # print myTree
     # storeTree(myTree,'classifierStorage.txt')
     # grabTree('classifierStorage.txt')
-    fr = open('is_m4.txt')
-    lenses = [inst.strip().split() for inst in fr.readlines()]
+    # fr = open('is_m4.txt')
+    # lenses = [inst.strip().split() for inst in fr.readlines()]
     # lensesLabels = ['age','prescript','astigmacit','tearRate']
     # lensesLabels = ['gender','marriage','education','house_state','org_type','company_position','city_name','age_desc','income_desc']
     # print lensesLabels

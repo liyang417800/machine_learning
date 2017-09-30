@@ -3,12 +3,25 @@ import csv
 import random
 import math
 
-def loadCsv(filename):
-	lines = csv.reader(open(filename, "rb"))
-	dataset = list(lines)
-	for i in range(len(dataset)):
-		dataset[i] = [float(x) for x in dataset[i]]
-	return dataset
+# def loadCsv(filename):
+# 	lines = csv.reader(open(filename, "rb"))
+# 	dataset = list(lines)
+# 	for i in range(len(dataset)):
+# 		dataset[i] = [float(x) for x in dataset[i]]
+# 	return dataset
+
+def file2matrix(filename):
+    fr = open(filename)
+    arrayOLines = fr.readlines()
+    numberOfLines = len(arrayOLines)
+    #构造和文件长度一样的为0的数组
+    returnMat = []
+    classLabelVector = []
+    for line in arrayOLines:
+        line = line.strip()
+        listFromLine = line.split('\t')
+        returnMat.append (listFromLine[0:10])
+    return returnMat
 
 def splitDataset(dataset, splitRatio):
 	trainSize = int(len(dataset) * splitRatio)
@@ -29,7 +42,7 @@ def separateByClass(dataset):
 	return separated
 
 def mean(numbers):
-	return sum(numbers)/float(len(numbers))
+	return sum(numbers)/str(float(len(numbers)))
 
 def stdev(numbers):
 	avg = mean(numbers)
@@ -86,26 +99,19 @@ def getAccuracy(testSet, predictions):
 			correct += 1
 	return (correct/float(len(testSet))) * 100.0
 
-import numpy as np
-X = np.random.randint(2, size=(6, 100))
-print X
-Y = np.array([1, 2, 3, 4, 4, 5])
-from sklearn.naive_bayes import BernoulliNB
-clf = BernoulliNB()
-clf.fit(X, Y)
-BernoulliNB(alpha=1.0, binarize=0.0, class_prior=None, fit_prior=True)
-print(clf.predict(X[3:4]))
 
 if __name__=='__main__':
-	filename = 'pima-indians-diabetes.data.csv'
+	filename = 'is_m4.txt'
 	splitRatio = 0.67
-	dataset = loadCsv(filename)
+	dataset = file2matrix(filename)
+	print dataset
     #拆分测试集
 	trainingSet, testSet = splitDataset(dataset, splitRatio)
 	print('Split {0} rows into train={1} and test={2} rows').format(len(dataset), len(trainingSet), len(testSet))
 	# prepare model
 	summaries = summarizeByClass(trainingSet)
-	# test model
-	predictions = getPredictions(summaries, testSet)
-	accuracy = getAccuracy(testSet, predictions)
-	print('Accuracy: {0}%').format(accuracy)
+
+	# # test model
+	# predictions = getPredictions(summaries, testSet)
+	# accuracy = getAccuracy(testSet, predictions)
+	# print('Accuracy: {0}%').format(accuracy)
