@@ -17,6 +17,7 @@ def classify0(inX, dataSet, labels, k):
     sqDiffMat = diffMat**2
     sqDistances = sqDiffMat.sum(axis=1)
     distances = sqDistances**0.5
+    #argsort函数返回的是数组值从小到大的索引值
     sortedDistIndicies = distances.argsort()
     classCount={}
     for i in range(k):
@@ -95,8 +96,8 @@ if __name__ == '__main__':
     # a=[[1,2,3],[5,4]]
     # print a
     # print tile(a,(4,1))
-    # print classify0([0,0],group,labels,3)
-    datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
+    print classify0([0,0],group,labels,3)
+    # datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
     # print datingDataMat,datingLabels[0:20]
 
     #画图
@@ -104,8 +105,8 @@ if __name__ == '__main__':
     # ax = fig.add_subplot(111)
     # ax.scatter(datingDataMat[:,1],datingDataMat[:,2],15.0*array(datingLabels),15.0*array(datingLabels))
     # plt.show()
-    normMat,ranges,minVals = autoNorm(datingDataMat)
-    datingClassTest()
+    # normMat,ranges,minVals = autoNorm(datingDataMat)
+    # datingClassTest()
     # print normMat
     # print normMat,ranges,minVals
     # classifyPerson()

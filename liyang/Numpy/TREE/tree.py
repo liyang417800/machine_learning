@@ -21,14 +21,14 @@ def calcShannonEnt(dataSet):
         shannonEnt -=prob * log(prob,2)  #log以2为底1的对数为0
     return shannonEnt
 
-# def createDataSet():
-#     dataSet = [[1,1,'yes'],
-#                [1,1,'yes'],
-#                [1,0,'no'],
-#                [0,1,'no'],
-#                [0,1,'no']]
-#     labels = ['no surfacing','flippers']
-#     return dataSet,labels
+def createDataSet():
+    dataSet = [[1,1,'yes'],
+               [1,1,'yes'],
+               [1,0,'no'],
+               [0,1,'no'],
+               [0,1,'no']]
+    labels = ['no surfacing','flippers']
+    return dataSet,labels
 
 
 #按照list位置和value获取对应的值
@@ -40,6 +40,7 @@ def splitDataSet(dataSet,axis,value):
             reducedFeatVec.extend(featVec[axis+1:])
             retDataSet.append(reducedFeatVec)
     return retDataSet
+
 #选出最好的feature
 def chooseBestFeatureToSplit(dataSet):
     numFeatures = len(dataSet[0]) - 1      #the last column is used for the labels
@@ -210,8 +211,8 @@ def datingClassTest():
 
 
 if __name__=='__main__':
-    # myDat,lables = createDataSet()
-    # print splitDataSet(myDat,0,0)
+    myDat,lables = createDataSet()
+    print splitDataSet(myDat,0,0)
     # print chooseBestFeatureToSplit(myDat)
     # print lables
     # myTree = treePlotter.retrieveTree(0)
@@ -238,7 +239,7 @@ if __name__=='__main__':
     # datingDataMat,datingLabels = file2matrix('is_m4_t.txt')
     # print datingDataMat,datingLabels
     # print len(datingDataMat)
-    datingClassTest()
+    # datingClassTest()
 
 
 

@@ -25,18 +25,22 @@ def clipAlpha(aj,H,L):
         aj = L
     return aj
 
+
+#求解alphas和b
 def smoSimple(dataMatIn, classLabels, C, toler, maxIter):
     #数据集,类别标签,常数C,容错率和取消前最大的循环次数
+    #dataArr,labelArr,0.6,0.001,40
     dataMatrix = mat(dataMatIn); labelMat = mat(classLabels).transpose()
-    b = 0; m,n = shape(dataMatrix)
+
+    b = 0; m,n = shape(dataMatrix) #100 2
     alphas = mat(zeros((m,1)))
     iter = 0
     while (iter < maxIter):
         alphaPairsChanged = 0
         for i in range(m):
-            fXi = float(multiply(alphas,labelMat).T*(dataMatrix*dataMatrix[i,:].T)) + b
+            fXi = float(multiply(alphas,labelMat).T*(dataMatrix*dataMatrix[i,:].T)) + b #预测结果
             Ei = fXi - float(labelMat[i])#if checks if an example violates KKT conditions
-
+            #保证其不在边界上
             if ((labelMat[i]*Ei < -toler) and (alphas[i] < C)) or ((labelMat[i]*Ei > toler) and (alphas[i] > 0)):
                 j = selectJrand(i,m)
                 fXj = float(multiply(alphas,labelMat).T*(dataMatrix*dataMatrix[j,:].T)) + b
@@ -291,9 +295,13 @@ def testDigits(kTup=('rbf', 10)):
 
 if __name__=='__main__':
     dataArr,labelArr = loadDataSet('testSet.txt')
-    b,alphas = smoP(dataArr,labelArr,0.6,0.001,40)
+    b,alphas = smoSimple(dataArr,labelArr,0.6,0.001,40)
+    print alphas[alphas>0]
     ws = calcWs(alphas,dataArr,labelArr)
-    testDigits(('rbf',10))
+    print "ws"+str(ws)
+    print dataArr[0]*mat(ws)+b
+    print labelArr[0]
+    # testDigits(('rbf',10))
 
 
 
