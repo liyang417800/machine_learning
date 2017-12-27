@@ -16,6 +16,7 @@ def calcShannonEnt(dataSet):
             labelCounts[currentLbel] = 0
         labelCounts[currentLbel] += 1
     shannonEnt = 0.0
+    # print labelCounts
     for key in labelCounts:
         prob = float(labelCounts[key])/numEntries
         shannonEnt -=prob * log(prob,2)  #log以2为底1的对数为0
@@ -212,8 +213,10 @@ def datingClassTest():
 
 if __name__=='__main__':
     myDat,lables = createDataSet()
-    print splitDataSet(myDat,0,0)
-    # print chooseBestFeatureToSplit(myDat)
+    print myDat,lables
+    # print splitDataSet(myDat,0,0)
+    # print calcShannonEnt(myDat)
+    print chooseBestFeatureToSplit(myDat)
     # print lables
     # myTree = treePlotter.retrieveTree(0)
     # print myTree

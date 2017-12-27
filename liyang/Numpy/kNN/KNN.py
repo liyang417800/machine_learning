@@ -13,18 +13,20 @@ def createDataSet():
 #用于分类的输人向量是inX,训练样本dataSet,标签向量labels,选择最邻近的数目k
 def classify0(inX, dataSet, labels, k):
     dataSetSize = dataSet.shape[0] #4
-    diffMat = tile(inX, (dataSetSize,1)) - dataSet
+    diffMat = tile(inX, (dataSetSize,1)) - dataSet  #计算输入向量与每个特征数据的差值,提供的距离计算
     sqDiffMat = diffMat**2
     sqDistances = sqDiffMat.sum(axis=1)
     distances = sqDistances**0.5
-    #argsort函数返回的是数组值从小到大的索引值
-    sortedDistIndicies = distances.argsort()
+    sortedDistIndicies = distances.argsort()      #argsort函数返回的是数组值从小到大的索引值
     classCount={}
     for i in range(k):
         voteIlabel = labels[sortedDistIndicies[i]]
+        # print voteIlabel
+        # print classCount.get(voteIlabel,0)
         classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 # 对于选举值进行加1的操作
         #对于分类的标签和标签数量排序,降序
         sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse=True)
+        # print sortedClassCount
     return sortedClassCount[0][0]  #取出第一行第一列,该值为预测的标签
 
 def file2matrix(filename):
@@ -32,14 +34,14 @@ def file2matrix(filename):
     arrayOLines = fr.readlines()
     numberOfLines = len(arrayOLines)
     #构造和文件长度一样的为0的数组
-    returnMat = zeros((numberOfLines,3))
+    returnMat = zeros((numberOfLines,3)) #构建和数据特征数量一样的为0向量
     classLabelVector = []
     index = 0
     for line in arrayOLines:
         line = line.strip()
         listFromLine = line.split('\t')
-        print listFromLine
-        returnMat[index,:] = listFromLine[0:3]
+        # print returnMat
+        returnMat[index,:] = listFromLine[0:3]   #逐条更新为0向量
         classLabelVector.append(int(listFromLine[-1]))
         index +=1
     return returnMat,classLabelVector
@@ -91,13 +93,14 @@ def datingClassTest():
 
 
 if __name__ == '__main__':
-    group,labels = createDataSet()
+    # group,labels = createDataSet()
+    # print group,labels
     # print group.shape[0]
     # a=[[1,2,3],[5,4]]
     # print a
-    # print tile(a,(4,1))
-    print classify0([0,0],group,labels,3)
-    # datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
+    # print tile([0,0],(4,1))
+    # print classify0([0,0],group,labels,3)
+    datingDataMat,datingLabels = file2matrix('datingTestSet2.txt')
     # print datingDataMat,datingLabels[0:20]
 
     #画图
@@ -109,4 +112,4 @@ if __name__ == '__main__':
     # datingClassTest()
     # print normMat
     # print normMat,ranges,minVals
-    # classifyPerson()
+    classifyPerson()

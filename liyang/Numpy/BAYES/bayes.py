@@ -42,8 +42,8 @@ def trainNB0(trainMatrix,trainCategory):
     numTrainDocs = len(trainMatrix)  #所有list的数量,list长度为6
     numWords = len(trainMatrix[0])  #一个list的长度,长度为32
     pAbusive = sum(trainCategory) / float(numTrainDocs)  # 3/6  求出是坏的概率
-    p0Num = zeros(numWords)
-    p1Num = zeros(numWords)
+    p0Num = zeros(numWords) #32个0
+    p1Num = zeros(numWords) #32个0
 
     # p0Num = ones(numWords)
     # p1Num = ones(numWords)
@@ -150,20 +150,19 @@ def spamTest():
 
 
 if __name__=='__main__':
-    listOPosts,listClasses = loadDataSet()
-    myVocabList = createVocabList(listOPosts)
-    print myVocabList
-    # print myVocabList
-    trainMat = []
-    for postinDoc in listOPosts:
-        trainMat.append(setOfWords2Vec(myVocabList,postinDoc))
+    # listOPosts,listClasses = loadDataSet()
+    # print listOPosts,listClasses
+    # myVocabList = createVocabList(listOPosts)
+    # # print myVocabList
+    # trainMat = []
+    # for postinDoc in listOPosts:
+    #     trainMat.append(setOfWords2Vec(myVocabList,postinDoc))
     # print trainMat
-    # print zeros(32)
-    # print sum(listClasses)
-    p0V,p1V,pAb = trainNB0(trainMat,listClasses)
+    # print listClasses
+    # p0V,p1V,pAb = trainNB0(trainMat,listClasses)
     # print p0V,p1V,pAb
 
-    # testingNB()
+    testingNB()
     # spamTest()
     # spamTest()
 
