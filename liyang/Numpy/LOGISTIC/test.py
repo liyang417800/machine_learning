@@ -1,13 +1,15 @@
 from numpy import *
 
-def sigmoid(inX):
-    return 1.0/(1+exp(-inX))
+import numpy as np
+a1=mat([[1,0,2],[0,0.8,0],[0,0,0.2]]);
+# a2=mat([[1],[2]])
+# a3=a1*a2
 
-a=[ 1.00000000e+00 ,-1.76120000e-02,  1.40530640e+01]
-b=mat(a)
-weights = ones((3,1))
-print b
-print b*weights
+# print a3
+# print shape(a1)
+# print a1
+# print eye(shape(a1)[0])
+# print a1.I
+# print a1.I*a1
 
-h = sigmoid(b*weights)
-print h
+print var(a1)

@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74075eba-c56a-4084-b027-aa3709554c84" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/liyang/Numpy/rand.py" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/abalone.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/ex0.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/ex1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/regression.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liyang/Numpy/BAYES/bayes.py" afterPath="$PROJECT_DIR$/liyang/Numpy/BAYES/bayes.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/logRegres.py" afterPath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/logRegres.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liyang/Numpy/TREE/tree.py" afterPath="$PROJECT_DIR$/liyang/Numpy/TREE/tree.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liyang/Numpy/adaboost/adaboost.py" afterPath="$PROJECT_DIR$/liyang/Numpy/adaboost/adaboost.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liyang/Numpy/adaboost/test.py" afterPath="$PROJECT_DIR$/liyang/Numpy/adaboost/test.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liyang/Numpy/kNN/KNN.py" afterPath="$PROJECT_DIR$/liyang/Numpy/kNN/KNN.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py" afterPath="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py" />
     </list>
     <ignored path="machine_learning.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +24,11 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/machine_learning$KNN.coverage" NAME="KNN Coverage Results" MODIFIED="1514018829856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/kNN" />
     <SUITE FILE_PATH="coverage/machine_learning$beyes.coverage" NAME="beyes Coverage Results" MODIFIED="1506586723886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/BAYES/indians" />
-    <SUITE FILE_PATH="coverage/machine_learning$regression.coverage" NAME="regression Coverage Results" MODIFIED="1496223867562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Numpy/huigui" />
+    <SUITE FILE_PATH="coverage/machine_learning$regression.coverage" NAME="regression Coverage Results" MODIFIED="1514532035990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST" />
     <SUITE FILE_PATH="coverage/machine_learning$KNN_ism4.coverage" NAME="KNN_ism4 Coverage Results" MODIFIED="1511330570615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/kNN" />
     <SUITE FILE_PATH="coverage/machine_learning$day_diff.coverage" NAME="day_diff Coverage Results" MODIFIED="1494410300080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/machine_learning$KNN__1_.coverage" NAME="KNN (1) Coverage Results" MODIFIED="1503649541771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/kNN" />
-    <SUITE FILE_PATH="coverage/machine_learning$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1508730851926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
+    <SUITE FILE_PATH="coverage/machine_learning$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1514446732509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
     <SUITE FILE_PATH="coverage/machine_learning$rand.coverage" NAME="rand Coverage Results" MODIFIED="1490607969724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Numpy" />
     <SUITE FILE_PATH="coverage/machine_learning$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1511330808545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/kNN" />
     <SUITE FILE_PATH="coverage/machine_learning$feedparser.coverage" NAME="feedparser Coverage Results" MODIFIED="1505369684829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/BAYES" />
@@ -52,78 +51,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KNN.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/kNN/KNN.py">
+      <file leaf-file-name="regression.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datingTestSet2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/kNN/datingTestSet2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="989" column="28" selection-start-line="989" selection-start-column="28" selection-end-line="989" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="knn_ism4.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/kNN/knn_ism4.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-              <folding />
+            <state vertical-scroll-proportion="2.4139345">
+              <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+              <folding>
+                <element signature="e#15#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/kNN/test.py">
+        <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-              <folding />
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KNN_ism4.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/kNN/KNN_ism4.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="85" column="38" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adaboost.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/adaboost.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.038961">
-              <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="horseColicTest2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/horseColicTest2.txt">
+      <file leaf-file-name="abalone.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/abalone.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -132,11 +85,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="horseColicTraining2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/horseColicTraining2.txt">
+      <file leaf-file-name="_base.py" pinned="false" current-in-tab="false">
+        <entry file="file:///anaconda/lib/python2.7/site-packages/matplotlib/axes/_base.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ex0.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/ex0.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="20" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -189,7 +152,6 @@
         <option value="$PROJECT_DIR$/liyang/Numpy/TREE/is_m4.txt" />
         <option value="$PROJECT_DIR$/liyang/Numpy/BAYES/indians/beyes.py" />
         <option value="$PROJECT_DIR$/liyang/Numpy/TREE/is_m4_t.txt" />
-        <option value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py" />
         <option value="$PROJECT_DIR$/liyang/Numpy/SVM/trainingDigits/test.py" />
         <option value="$PROJECT_DIR$/liyang/Numpy/SVM/test.py" />
         <option value="$PROJECT_DIR$/liyang/Numpy/SVM/svmMLiA.py" />
@@ -201,6 +163,8 @@
         <option value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/logRegres.py" />
         <option value="$PROJECT_DIR$/liyang/Numpy/adaboost/test.py" />
         <option value="$PROJECT_DIR$/liyang/Numpy/adaboost/adaboost.py" />
+        <option value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py" />
+        <option value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/regression.py" />
       </list>
     </option>
   </component>
@@ -210,10 +174,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="14" />
-    <option name="y" value="25" />
-    <option name="width" value="1351" />
-    <option name="height" value="821" />
+    <option name="x" value="-1036" />
+    <option name="y" value="7" />
+    <option name="width" value="946" />
+    <option name="height" value="837" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -262,6 +226,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -317,9 +282,52 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machine_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machine_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liyang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LOGISTIC_FORECAST" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machine_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machine_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="liyang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Numpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LOGISTIC" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -336,13 +344,6 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
-      <recent name="$PROJECT_DIR$/liyang/Numpy/BAYES/indians" />
-      <recent name="$PROJECT_DIR$/liyang/Numpy/TREE" />
-      <recent name="$PROJECT_DIR$/liyang/Numpy/kNN" />
-      <recent name="$PROJECT_DIR$/Numpy/kNN" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/liyang/Numpy/TREE" />
       <recent name="$PROJECT_DIR$/liyang/Numpy/BAYES/indians" />
@@ -350,26 +351,15 @@
       <recent name="$PROJECT_DIR$/Numpy/TREE" />
       <recent name="$PROJECT_DIR$/Numpy/kNN" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST" />
+      <recent name="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
+      <recent name="$PROJECT_DIR$/liyang/Numpy/BAYES/indians" />
+      <recent name="$PROJECT_DIR$/liyang/Numpy/TREE" />
+      <recent name="$PROJECT_DIR$/liyang/Numpy/kNN" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.adaboost">
-    <configuration default="false" name="logRegres" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="machine_learning" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/logRegres.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.regression">
     <configuration default="false" name="KNN" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -384,24 +374,6 @@
       <module name="machine_learning" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liyang/Numpy/kNN/KNN.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="bayes" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liyang/Numpy/BAYES" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="machine_learning" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liyang/Numpy/BAYES/bayes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -438,6 +410,42 @@
       <module name="machine_learning" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liyang/Numpy/adaboost/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="machine_learning" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="machine_learning" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/regression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -636,19 +644,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.logRegres" />
-      <item index="1" class="java.lang.String" itemvalue="Python.KNN" />
-      <item index="2" class="java.lang.String" itemvalue="Python.bayes" />
-      <item index="3" class="java.lang.String" itemvalue="Python.adaboost" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="0" class="java.lang.String" itemvalue="Python.KNN" />
+      <item index="1" class="java.lang.String" itemvalue="Python.adaboost" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.regression" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.adaboost" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.KNN" />
-        <item index="3" class="java.lang.String" itemvalue="Python.logRegres" />
-        <item index="4" class="java.lang.String" itemvalue="Python.bayes" />
+        <item index="0" class="java.lang.String" itemvalue="Python.regression" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.adaboost" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.KNN" />
       </list>
     </recent_temporary>
   </component>
@@ -795,20 +803,26 @@
       <option name="project" value="LOCAL" />
       <updated>1511337145170</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="svm">
+      <created>1514343954874</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1514343954874</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="25" width="1351" height="821" extended-state="0" />
+    <frame x="-1036" y="7" width="946" height="837" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23147441" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36061946" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42258066" sideWeight="0.5121693" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3748126" sideWeight="0.4962963" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39643347" sideWeight="0.4878307" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30738255" sideWeight="0.4878307" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833582" sideWeight="0.4920635" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -853,41 +867,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/liyang/Numpy/huigui/ex0.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liyang/Numpy/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.97969544">
-          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liyang/Numpy/kNN/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liyang/Numpy/SVM/testDigits/1_3.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/liyang/Numpy/SVM/testDigits/1_4.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1056,13 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/liyang/Numpy/TREE/treePlotter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1109,7 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="101" selection-start-line="1" selection-start-column="101" selection-end-line="1" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,7 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="298" column="40" selection-start-line="298" selection-start-column="40" selection-end-line="298" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,17 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="69" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC/logRegres.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-          <folding>
-            <element signature="e#14#33#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,7 +1109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1159,7 +1116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,7 +1123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,7 +1130,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="989" column="28" selection-start-line="989" selection-start-column="28" selection-end-line="989" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,7 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="85" column="38" selection-start-line="85" selection-start-column="11" selection-end-line="85" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,19 +1144,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.20380434">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/horseColicTest2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8559783">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/adaboost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.5601172">
+          <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/ex1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC/logRegres.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4673913">
+          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/ex0.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///anaconda/lib/python2.7/site-packages/matplotlib/axes/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/abalone.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1211,11 +1223,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/liyang/Numpy/adaboost/adaboost.py">
+    <entry file="file://$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST/regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.038961">
-          <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="2.4139345">
+          <caret line="141" column="43" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+          <folding>
+            <element signature="e#15#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
