@@ -48,10 +48,10 @@ def get_features(data):
     return features_list
 
 # 导入数据
-feature_save_path = "train_true.csv"  #将最终生成的特征存入该文件
-# feature_save_path = "d_train_20180102.csv"  #将最终生成的特征存入该文件
+# feature_save_path = "train_true.csv"  #将最终生成的特征存入该文件
+feature_save_path = "d_train_20180102.csv"  #将最终生成的特征存入该文件
 data = pd.read_csv(feature_save_path)
-# data = data.fillna(0)
+data = data.fillna(0)
 
 # data.sort(["id"]) 排序
 # data = data[0:100]
@@ -64,19 +64,19 @@ feature,lable = get_features_target(data)
 
 
 
-# feature_save_path_test = "d_test_A_20180102.csv"  #将最终生成的特征存入该文件
-# data_test = pd.read_csv(feature_save_path_test)
+feature_save_path_test = "d_test_A_20180102.csv"  #将最终生成的特征存入该文件
+data_test = pd.read_csv(feature_save_path_test)
 # print data_test.mean()
-# data_test = data_test.fillna(0)
-# # data.sort(["id"]) 排序
-# # data = data[0:100]
-# # print data
-# feature_test = get_features(data_test)
+data_test = data_test.fillna(0)
+# data.sort(["id"]) 排序
+# data = data[0:100]
+# print data
+feature_test = get_features(data_test)
 
 
 # print (feature_test[0:10])
 
-X_train, X_test, y_train, y_test = train_test_split(feature, lable, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(feature, lable, test_size=0.01)
 
 # print len(X_train), len(X_test), len(y_train), len(y_test)
 
@@ -105,11 +105,11 @@ verbose: 日志level。
 reg_model = GradientBoostingRegressor(
     loss='ls',
     learning_rate=0.02,
-    n_estimators=300,
-    subsample=0.7,
-    max_features=0.5,
-    max_depth=4,
-    verbose=1
+    n_estimators=220,
+    subsample=0.75,
+    max_features=0.1,
+    max_depth=5,
+    verbose=2
 )
 
 # 训练模型i
@@ -122,17 +122,23 @@ prediction_train = reg_model.predict(X_train)
 #     print X_train[i][0],y_train[i],prediction_train[i]
 
 
-rmse_train = mean_squared_error(y_train, prediction_train)
-# prediction_test = reg_model.predict(feature_test)
-prediction_test = reg_model.predict(X_test)
+# rmse_train = mean_squared_error(y_train, prediction_train)
+prediction_test = reg_model.predict(feature_test)
+# prediction_test = reg_model.predict(X_test)
 
-rmse_test = mean_squared_error(y_test, prediction_test)
+# rmse_test = mean_squared_error(y_test, prediction_test)
 # print prediction_test
 # print round(prediction_test[0:2],3)
 
+with open('lable.csv', "wb") as csvFile:
+    csvWriter = csv.writer(csvFile)
+    for i in range(len(prediction_test)):
+        csvWriter.writerow([round(prediction_test[i],3)])
+    csvFile.close
 
 
-print "RMSE for training dataset is %f, for testing dataset is %f." % (rmse_train, rmse_test)
+
+# print "RMSE for training dataset is %f, for testing dataset is %f." % (rmse_train, rmse_test)
 """Output:
 RMSE for training dataset is 4.239157, for testing dataset is 10.749044.
 """
