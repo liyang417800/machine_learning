@@ -49,7 +49,7 @@ def get_features(data):
 
 # 导入数据
 # feature_save_path = "train_true.csv"  #将最终生成的特征存入该文件
-feature_save_path = "d_train_20180102.csv"  #将最终生成的特征存入该文件
+feature_save_path = "/Users/yangli/PycharmProjects/machine_learning/Bloodsugar_Prediction/data/d_test_A_20180102.csv"  #将最终生成的特征存入该文件
 data = pd.read_csv(feature_save_path)
 data = data.fillna(0)
 
