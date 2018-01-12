@@ -49,7 +49,8 @@ def get_features(data):
 
 # 导入数据
 # feature_save_path = "train_true.csv"  #将最终生成的特征存入该文件
-feature_save_path = "/Users/yangli/PycharmProjects/machine_learning/Bloodsugar_Prediction/data/d_test_A_20180102.csv"  #将最终生成的特征存入该文件
+# feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
+feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该文件
 data = pd.read_csv(feature_save_path)
 data = data.fillna(0)
 
@@ -64,19 +65,19 @@ feature,lable = get_features_target(data)
 
 
 
-feature_save_path_test = "d_test_A_20180102.csv"  #将最终生成的特征存入该文件
-data_test = pd.read_csv(feature_save_path_test)
-# print data_test.mean()
-data_test = data_test.fillna(0)
-# data.sort(["id"]) 排序
-# data = data[0:100]
-# print data
-feature_test = get_features(data_test)
+# feature_save_path_test = "./data/d_test_A_20180102.csv"  #将最终生成的特征存入该文件
+# data_test = pd.read_csv(feature_save_path_test)
+# # print data_test.mean()
+# data_test = data_test.fillna(0)
+# # data.sort(["id"]) 排序
+# # data = data[0:100]
+# # print data
+# feature_test = get_features(data_test)
 
 
 # print (feature_test[0:10])
 
-X_train, X_test, y_train, y_test = train_test_split(feature, lable, test_size=0.01)
+X_train, X_test, y_train, y_test = train_test_split(feature, lable, test_size=0.2)
 
 # print len(X_train), len(X_test), len(y_train), len(y_test)
 
@@ -106,9 +107,9 @@ reg_model = GradientBoostingRegressor(
     loss='ls',
     learning_rate=0.02,
     n_estimators=220,
-    subsample=0.75,
+    subsample=0.6,
     max_features=0.1,
-    max_depth=5,
+    max_depth=4,
     verbose=2
 )
 

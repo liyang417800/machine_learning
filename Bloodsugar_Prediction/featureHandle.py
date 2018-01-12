@@ -1,42 +1,82 @@
 #$encoding=utf-8
 import pandas as pd
-import numpy as np
-import csv
 
-# df = pd.DataFrame({'男':[1,2,3,4,5,6,7,8],
+import csv
+from scipy.interpolate import lagrange#拉格朗日函数
+from pandas import Series,DataFrame, np
+from numpy import nan as NA
+
+
+# data = pd.DataFrame({'男':[1,2,3,4,5,6,7,8],
 #                    '女':[np.nan,5,7,8,9,10,11,12],
 #                    '蛋白质':[5,np.nan,7,np.nan,9,10,11,12]
 #                    },
-#                     columns=['男','女','蛋白质'],
-#                     index=list('ABCDEFGH'))
+#                     columns=['男','女','蛋白质'])
+#
+# print data
 
-feature_save_path = "d_train_20180102.csv"  #将最终生成的特征存入该文件
-df = pd.read_csv(feature_save_path)
-column = df.columns.values
+feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
+data = pd.read_csv(feature_save_path)
+
+
+#自定义列向量插值函数
+def ploy(s,n,k=3):
+    y=s[list(range(n-k,n))+list(range(n+1,n+1+k))]#取数
+    y=y[y.notnull()]
+    return lagrange(y.index,list(y))(n)
+for i in data.columns:
+    for j in range(len(data)):
+        if(data[i].isnull())[j]:
+            data[i][j]=ploy(data[i],j)
+data.to_csv('./data/lable_pre.csv',index=False)
+
+# with open('./data/lable_pre.csv', "wb") as csvFile:
+#     csvWriter = csv.writer(csvFile)
+#     for i in range(len(data)):
+#         print data[i]
+#         csvWriter.writerow([data[i]])
+#     csvFile.close
+
+
+
+# data.to_excel('./data/1.xls')
+
+
+
+# data=DataFrame(np.random.randn(1000,4))
+# print(data.describe())
+#
+# print("\n....找出某一列中绝对值大小超过3的项...\n")
+# col=data[3]
+# print(col[np.abs(col) > 3] )
+#
+# print("\n....找出全部绝对值超过3的值的行...\n")
+# print(col[(np.abs(data) > 3).any(1)] )
+
+
+
+
+
+
+
+
+
+
 
 # 只留下需要处理的列
 
 
 # print(df)
-column = df.columns.values
-print column
-# print df['白球比例'].mean()
-
-for i in range(len(column)):
-    print i
-    if i>=4:
-        a = df[column[i]].mean()
-        df = df.fillna({column[i]:a})
-    i=i+1
-print len(df)
-print type(df)
-# del df[0]
-df.to_csv('train_true.csv',index=False)
-
-# for i in range(len(df)):
+# column = df.columns.values
+#
+# for i in range(len(column)):
 #     print i
-
-
+#     if i>=4:
+#         a = df[column[i]].mean()
+#         df = df.fillna({column[i]:a})
+#     i=i+1
+# print len(df)
+# df.to_csv('train_true.csv',index=False)
 
 # with open('train_true.csv', "wb") as csvFile:
 #     csvWriter = csv.writer(csvFile)
