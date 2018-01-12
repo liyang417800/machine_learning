@@ -122,23 +122,23 @@ prediction_train = reg_model.predict(X_train)
 #     print X_train[i][0],y_train[i],prediction_train[i]
 
 
-# rmse_train = mean_squared_error(y_train, prediction_train)
-prediction_test = reg_model.predict(feature_test)
-# prediction_test = reg_model.predict(X_test)
+rmse_train = mean_squared_error(y_train, prediction_train)
+# prediction_test = reg_model.predict(feature_test)
+prediction_test = reg_model.predict(X_test)
 
-# rmse_test = mean_squared_error(y_test, prediction_test)
+rmse_test = mean_squared_error(y_test, prediction_test)
 # print prediction_test
 # print round(prediction_test[0:2],3)
 
-with open('lable.csv', "wb") as csvFile:
-    csvWriter = csv.writer(csvFile)
-    for i in range(len(prediction_test)):
-        csvWriter.writerow([round(prediction_test[i],3)])
-    csvFile.close
+# with open('lable.csv', "wb") as csvFile:
+#     csvWriter = csv.writer(csvFile)
+#     for i in range(len(prediction_test)):
+#         csvWriter.writerow([round(prediction_test[i],3)])
+#     csvFile.close
 
 
 
-# print "RMSE for training dataset is %f, for testing dataset is %f." % (rmse_train, rmse_test)
+print "RMSE for training dataset is %f, for testing dataset is %f." % (rmse_train, rmse_test)
 """Output:
 RMSE for training dataset is 4.239157, for testing dataset is 10.749044.
 """
