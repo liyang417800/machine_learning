@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74075eba-c56a-4084-b027-aa3709554c84" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/parameter.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/machine_learning.iml" afterPath="$PROJECT_DIR$/.idea/machine_learning.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/readme.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/boston.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/d_test_A_20180102.csv" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/d_train_20180102.csv" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/data/d_train_20180102.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/lable.csv" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/data/lable.csv" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/test.py" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/bloodsugar.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/test_aaa.py" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/featureHandle.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/train_true.csv" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/data/train_true.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/lable.csv" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/lable.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/test.py" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/test.py" />
     </list>
     <ignored path="machine_learning.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +33,7 @@
     <SUITE FILE_PATH="coverage/machine_learning$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1514446732509" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
     <SUITE FILE_PATH="coverage/machine_learning$rand.coverage" NAME="rand Coverage Results" MODIFIED="1490607969724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Numpy" />
     <SUITE FILE_PATH="coverage/machine_learning$test_aaa.coverage" NAME="test_aaa Coverage Results" MODIFIED="1515660264775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bloodsugar_Prediction" />
-    <SUITE FILE_PATH="coverage/machine_learning$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1515727286209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bloodsugar_Prediction" />
+    <SUITE FILE_PATH="coverage/machine_learning$test__2_.coverage" NAME="test (2) Coverage Results" MODIFIED="1515727887375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bloodsugar_Prediction" />
     <SUITE FILE_PATH="coverage/machine_learning$feedparser.coverage" NAME="feedparser Coverage Results" MODIFIED="1505369684829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/BAYES" />
     <SUITE FILE_PATH="coverage/machine_learning$bayes.coverage" NAME="bayes Coverage Results" MODIFIED="1513762631386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/BAYES" />
     <SUITE FILE_PATH="coverage/machine_learning$adaboost.coverage" NAME="adaboost Coverage Results" MODIFIED="1514861912543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/adaboost" />
@@ -53,11 +56,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/test.py">
+      <file leaf-file-name="bloodsugar.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/bloodsugar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4920845">
-              <caret line="140" column="32" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
               <folding>
                 <element signature="e#17#35#0" expanded="true" />
               </folding>
@@ -65,18 +68,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boston.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/boston.py">
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/readme.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.05952381">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="d_test_A_20180102.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/d_test_A_20180102.csv">
+        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="126" selection-start-line="27" selection-start-column="126" selection-end-line="27" selection-end-column="126" />
@@ -86,7 +89,7 @@
         </entry>
       </file>
       <file leaf-file-name="lable.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/lable.csv">
+        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/lable.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -95,8 +98,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_aaa.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/test_aaa.py">
+      <file leaf-file-name="featureHandle.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/featureHandle.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="43" selection-end-column="19" />
@@ -108,7 +111,7 @@
         </entry>
       </file>
       <file leaf-file-name="train_true.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/train_true.csv">
+        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/train_true.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -130,7 +133,7 @@
         </entry>
       </file>
       <file leaf-file-name="d_train_20180102.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/d_train_20180102.csv">
+        <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_train_20180102.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="5411" column="47" selection-start-line="5411" selection-start-column="47" selection-end-line="5411" selection-end-column="47" />
@@ -154,7 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Numpy/TREE/treePlotter.py" />
         <option value="$PROJECT_DIR$/Numpy/TREE/lenses.txt" />
         <option value="$PROJECT_DIR$/Numpy/TREE/tree.py" />
         <option value="$PROJECT_DIR$/Numpy/TREE/classifierStorage.txt" />
@@ -205,6 +207,7 @@
         <option value="$PROJECT_DIR$/Bloodsugar_Prediction/parameter.py" />
         <option value="$PROJECT_DIR$/Bloodsugar_Prediction/lable.csv" />
         <option value="$PROJECT_DIR$/Bloodsugar_Prediction/test.py" />
+        <option value="$PROJECT_DIR$/Bloodsugar_Prediction/readme.txt" />
       </list>
     </option>
   </component>
@@ -299,13 +302,31 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machine_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="machine_learning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bloodsugar_Prediction" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -318,19 +339,19 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\machine_learning\Bloodsugar_Prediction" />
-      <recent name="$PROJECT_DIR$/liyang/Numpy/TREE" />
-      <recent name="$PROJECT_DIR$/liyang/Numpy/BAYES/indians" />
-      <recent name="$PROJECT_DIR$/liyang" />
-      <recent name="$PROJECT_DIR$/Numpy/TREE" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Bloodsugar_Prediction" />
       <recent name="$PROJECT_DIR$/liyang/Numpy/LOGISTIC_FORECAST" />
       <recent name="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
       <recent name="$PROJECT_DIR$/liyang/Numpy/BAYES/indians" />
       <recent name="$PROJECT_DIR$/liyang/Numpy/TREE" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Bloodsugar_Prediction/data" />
+      <recent name="C:\Users\Administrator\machine_learning\Bloodsugar_Prediction" />
+      <recent name="$PROJECT_DIR$/liyang/Numpy/TREE" />
+      <recent name="$PROJECT_DIR$/liyang/Numpy/BAYES/indians" />
+      <recent name="$PROJECT_DIR$/liyang" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -395,7 +416,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="machine_learning" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bloodsugar_Prediction/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bloodsugar_Prediction/bloodsugar.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -413,7 +434,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="machine_learning" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bloodsugar_Prediction/test_aaa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bloodsugar_Prediction/featureHandle.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -825,7 +846,13 @@
       <option name="project" value="LOCAL" />
       <updated>1515576948067</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="预测血糖值">
+      <created>1515727870099</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1515727870100</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -834,18 +861,18 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25878593" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42258066" sideWeight="0.5121693" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3748126" sideWeight="0.4962963" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885087" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22332016" sideWeight="0.4878307" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22376238" sideWeight="0.4878307" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833582" sideWeight="0.4920635" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25183374" sideWeight="0.4962963" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1154,23 +1181,7 @@
     <entry file="file:///anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py" />
     <entry file="file:///anaconda/lib/python2.7/site-packages/pandas/core/index.py" />
     <entry file="file:///anaconda/lib/python2.7/site-packages/pandas/core/nanops.py" />
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/train_true.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/boston.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/d_test_A_20180102.csv">
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="126" selection-start-line="27" selection-start-column="126" selection-end-line="27" selection-end-column="126" />
@@ -1178,10 +1189,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/d_train_20180102.csv">
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_train_20180102.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5411" column="47" selection-start-line="5411" selection-start-column="47" selection-end-line="5411" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/lable.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/train_true.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1196,15 +1223,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/lable.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/test_aaa.py">
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/featureHandle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="43" selection-end-column="19" />
@@ -1214,13 +1233,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/test.py">
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/bloodsugar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4920845">
-          <caret line="140" column="32" selection-start-line="140" selection-start-column="25" selection-end-line="140" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="114" column="7" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
           <folding>
             <element signature="e#17#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05952381">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
