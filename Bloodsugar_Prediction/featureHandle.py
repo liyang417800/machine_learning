@@ -5,6 +5,7 @@ import csv
 from scipy.interpolate import lagrange#拉格朗日函数
 from pandas import Series,DataFrame, np
 from numpy import nan as NA
+import matplotlib.pyplot as plt
 
 
 # data = pd.DataFrame({'男':[1,2,3,4,5,6,7,8],
@@ -15,20 +16,28 @@ from numpy import nan as NA
 #
 # print data
 
-feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
+# feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
+feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该文件
 data = pd.read_csv(feature_save_path)
+
+# print data.describe().astype(np.int64).T
+print data['*天门冬氨酸氨基转换酶']
+data['*天门冬氨酸氨基转换酶'].plot()
+plt.show()
 
 
 #自定义列向量插值函数
-def ploy(s,n,k=3):
-    y=s[list(range(n-k,n))+list(range(n+1,n+1+k))]#取数
-    y=y[y.notnull()]
-    return lagrange(y.index,list(y))(n)
-for i in data.columns:
-    for j in range(len(data)):
-        if(data[i].isnull())[j]:
-            data[i][j]=ploy(data[i],j)
-data.to_csv('./data/lable_pre.csv',index=False)
+# def ploy(s,n,k=3):
+#     y=s[list(range(n-k,n))+list(range(n+1,n+1+k))]#取数
+#     y=y[y.notnull()]
+#     return lagrange(y.index,list(y))(n)
+# for i in data.columns:
+#     for j in range(len(data)):
+#         if(data[i].isnull())[j]:
+#             data[i][j]=ploy(data[i],j)
+# data.to_csv('./data/lable_pre.csv',index=False)
+
+
 
 # with open('./data/lable_pre.csv', "wb") as csvFile:
 #     csvWriter = csv.writer(csvFile)

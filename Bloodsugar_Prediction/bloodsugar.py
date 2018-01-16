@@ -61,10 +61,6 @@ data = data.fillna(0)
 
 feature,lable = get_features_target(data)
 
-
-
-
-
 # feature_save_path_test = "./data/d_test_A_20180102.csv"  #将最终生成的特征存入该文件
 # data_test = pd.read_csv(feature_save_path_test)
 # # print data_test.mean()
