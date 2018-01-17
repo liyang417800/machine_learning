@@ -21,9 +21,18 @@ feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该�
 data = pd.read_csv(feature_save_path)
 
 # print data.describe().astype(np.int64).T
-print data['*天门冬氨酸氨基转换酶']
-data['*天门冬氨酸氨基转换酶'].plot()
+# print data['*天门冬氨酸氨基转换酶']
+# data['*天门冬氨酸氨基转换酶'].plot()
+# plt.show()
+
+# print data['*天门冬氨酸氨基转换酶'].describe()
+
+fig, ax = plt.subplots()
+ax.scatter(x = data['*天门冬氨酸氨基转换酶'], y = data['血糖'])
+plt.ylabel('SalePrice', fontsize=13)
+plt.xlabel('GrLivArea', fontsize=13)
 plt.show()
+
 
 
 #自定义列向量插值函数

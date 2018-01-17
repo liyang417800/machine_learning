@@ -49,8 +49,8 @@ def get_features(data):
 
 # 导入数据
 # feature_save_path = "train_true.csv"  #将最终生成的特征存入该文件
-# feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
-feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该文件
+feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
+# feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该文件
 data = pd.read_csv(feature_save_path)
 data = data.fillna(0)
 
@@ -105,7 +105,7 @@ reg_model = GradientBoostingRegressor(
     n_estimators=220,
     subsample=0.6,
     max_features=0.1,
-    max_depth=4,
+    max_depth=3,
     verbose=2
 )
 

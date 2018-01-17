@@ -1,69 +1,92 @@
-#$encoding=utf-8
-'''
-环境 ubuntu+IDEA+python35
-实现的功能：利用GBDT模型实现数值的预测
-背景：天池的IJICAI，预测商店流量
-PS：feature_data.csv是已经处理好的特征
-'''
+#coding:utf-8
+import time
+import datetime
 import numpy as np
 import pandas as pd
-from sklearn import ensemble, cross_validation
+import lightgbm as lgb
+from dateutil.parser import parse
+from sklearn.cross_validation import KFold
+from sklearn.metrics import mean_squared_error
 
-#该评价指标用来评价模型好坏
-def rmspe(zip_list,count):
-    # w = ToWeight(y)
-    # rmspe = np.sqrt(np.mean((y - yhat) ** 2))
-    sum_value=0.0
-    # count=len(zip_list)
-    for real,predict in zip_list:
-        v1=(real-predict)**2
-        sum_value += v1
-    v2=sum_value / count
-    v3=np.sqrt(v2)
-    return v3
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
-#提取特征和目标值
-def get_features_target(data):
-    data_array=pd.np.array(data)#传入dataframe，为了遍历，先转为array
-    features_list=[]
-    target_list=[]
-    for line in data_array:
-        temp_list=[]
-        for i in range(0,384):#一共有384个特征
-            if i == 360 :#index=360对应的特征是flow
-                target_temp=int(line[i])
-            else:
-                temp_list.append(int(line[i]))
-        features_list.append(temp_list)
-        target_list.append(target_temp)
-    return features_list, target_list
-    # return pd.DataFrame(features_list),pd.DataFrame(target_list)
 
-def run_demo():
 
-    feature_save_path = "/home/wangtuntun/IJCAI/Data/feature_data.csv"  # 将最终生成的特征存入该文件
-    data = pd.read_csv(feature_save_path)
-    data_other,data=cross_validation.train_test_split(data,test_size=0.001,random_state=10)#为了减少代码运行时间，方便测试
-    train_and_valid, test = cross_validation.train_test_split(data, test_size=0.2, random_state=10)
-    train, valid = cross_validation.train_test_split(train_and_valid, test_size=0.01, random_state=10)
-    train_feature, train_target = get_features_target(train)
-    test_feature, test_target = get_features_target(test)
-    valid_feature, valid_target = get_features_target(valid)
+data_path = './data/'
 
-    params = {'n_estimators': 500, 'max_depth': 4, 'min_samples_split': 2,
-              'learning_rate': 0.01, 'loss': 'ls'}
-    clf = ensemble.GradientBoostingRegressor(**params)
+train = pd.read_csv(data_path+'d_train_20180102.csv')
+test = pd.read_csv(data_path+'d_test_A_20180102.csv')
 
-    clf.fit(train_feature, train_target) #训练
-    # mse = mean_squared_error(test_target, clf.predict(test_feature)) #预测并且计算MSE
-    # print(mse)
-    pre=clf.predict(test_feature)
-    pre_list=list(pre)
-    real_pre_zip=zip(test_target,pre_list)
 
-    count=len(pre_list)
-    error=rmspe(real_pre_zip,count)
-    print(error)
+def make_feat(train,test):
+    train_id = train.id.values.copy()
+    test_id = test.id.values.copy()
+    data = pd.concat([train,test])
 
-run_demo()
 
+    data['性别'] = data['性别'].map({'男':1,'女':0})
+    data['体检日期'] = (pd.to_datetime(data['体检日期']) - parse('2017-10-09')).dt.days
+
+    data.fillna(data.median(axis=0),inplace=True)
+
+    train_feat = data[data.id.isin(train_id)]
+    test_feat = data[data.id.isin(test_id)]
+
+    return train_feat,test_feat
+
+
+
+train_feat,test_feat = make_feat(train,test)
+
+predictors = [f for f in test_feat.columns if f not in ['血糖']]
+
+
+def evalerror(pred, df):
+    label = df.get_label().values.copy()
+    score = mean_squared_error(label,pred)*0.5
+    return ('0.5mse',score,False)
+
+print('开始训练...')
+params = {
+    'learning_rate': 0.01,
+    'boosting_type': 'gbdt',
+    'objective': 'regression',
+    'metric': 'mse',
+    'sub_feature': 0.7,
+    'num_leaves': 60,
+    'colsample_bytree': 0.7,
+    'feature_fraction': 0.7,
+    'min_data': 100,
+    'min_hessian': 1,
+    'verbose': -1,
+}
+
+print('开始CV 5折训练...')
+t0 = time.time()
+train_preds = np.zeros(train_feat.shape[0])
+test_preds = np.zeros((test_feat.shape[0], 5))
+kf = KFold(len(train_feat), n_folds = 5, shuffle=True, random_state=520)
+# for i, (train_index, test_index) in enumerate(kf):
+#     print('第{}次训练...'.format(i))
+#     train_feat1 = train_feat.iloc[train_index]
+#     train_feat2 = train_feat.iloc[test_index]
+#     lgb_train1 = lgb.Dataset(train_feat1[predictors], train_feat1['血糖'],categorical_feature=['性别'])
+#     lgb_train2 = lgb.Dataset(train_feat2[predictors], train_feat2['血糖'])
+#     gbm = lgb.train(params,
+#                     lgb_train1,
+#                     num_boost_round=3000,
+#                     valid_sets=lgb_train2,
+#                     verbose_eval=100,
+#                     feval=evalerror,
+#                     early_stopping_rounds=100)
+#     feat_imp = pd.Series(gbm.feature_importance(), index=predictors).sort_values(ascending=False)
+#     train_preds[test_index] += gbm.predict(train_feat2[predictors])
+#     test_preds[:,i] = gbm.predict(test_feat[predictors])
+# print('线下得分：    {}'.format(mean_squared_error(train_feat['血糖'],train_preds)*0.5))
+# print('CV训练用时{}秒'.format(time.time() - t0))
+#
+# submission = pd.DataFrame({'pred':test_preds.mean(axis=1)})
+# submission.to_csv(r'sub{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M%S')),header=None,
+#                   index=False, float_format='%.4f')
