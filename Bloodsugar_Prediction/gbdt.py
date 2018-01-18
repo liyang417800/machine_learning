@@ -30,6 +30,7 @@ def make_feat(train,test):
     data['体检日期'] = (pd.to_datetime(data['体检日期']) - parse('2017-10-09')).dt.days
 
     data.fillna(data.median(axis=0),inplace=True)
+    # print data
 
     train_feat = data[data.id.isin(train_id)]
     test_feat = data[data.id.isin(test_id)]
@@ -65,28 +66,31 @@ params = {
 
 print('开始CV 5折训练...')
 t0 = time.time()
-train_preds = np.zeros(train_feat.shape[0])
+train_preds = np.zeros(train_feat.shape[0]) #(5642, 42)
+# print train_preds,train_feat.shape
 test_preds = np.zeros((test_feat.shape[0], 5))
+# print test_preds,test_feat.shape
 kf = KFold(len(train_feat), n_folds = 5, shuffle=True, random_state=520)
-# for i, (train_index, test_index) in enumerate(kf):
-#     print('第{}次训练...'.format(i))
-#     train_feat1 = train_feat.iloc[train_index]
-#     train_feat2 = train_feat.iloc[test_index]
-#     lgb_train1 = lgb.Dataset(train_feat1[predictors], train_feat1['血糖'],categorical_feature=['性别'])
-#     lgb_train2 = lgb.Dataset(train_feat2[predictors], train_feat2['血糖'])
-#     gbm = lgb.train(params,
-#                     lgb_train1,
-#                     num_boost_round=3000,
-#                     valid_sets=lgb_train2,
-#                     verbose_eval=100,
-#                     feval=evalerror,
-#                     early_stopping_rounds=100)
-#     feat_imp = pd.Series(gbm.feature_importance(), index=predictors).sort_values(ascending=False)
-#     train_preds[test_index] += gbm.predict(train_feat2[predictors])
-#     test_preds[:,i] = gbm.predict(test_feat[predictors])
-# print('线下得分：    {}'.format(mean_squared_error(train_feat['血糖'],train_preds)*0.5))
-# print('CV训练用时{}秒'.format(time.time() - t0))
-#
+for i, (train_index, test_index) in enumerate(kf):
+    print('第{}次训练...'.format(i))
+    print i, (train_index, test_index)
+    train_feat1 = train_feat.iloc[train_index]
+    train_feat2 = train_feat.iloc[test_index]
+    lgb_train1 = lgb.Dataset(train_feat1[predictors], train_feat1['血糖'],categorical_feature=['性别'])
+    lgb_train2 = lgb.Dataset(train_feat2[predictors], train_feat2['血糖'])
+    gbm = lgb.train(params,
+                    lgb_train1,
+                    num_boost_round=3000,
+                    valid_sets=lgb_train2,
+                    verbose_eval=100,
+                    feval=evalerror,
+                    early_stopping_rounds=100)
+    feat_imp = pd.Series(gbm.feature_importance(), index=predictors).sort_values(ascending=False)
+    train_preds[test_index] += gbm.predict(train_feat2[predictors])
+    test_preds[:,i] = gbm.predict(test_feat[predictors])
+print('线下得分：    {}'.format(mean_squared_error(train_feat['血糖'],train_preds)*0.5))
+print('CV训练用时{}秒'.format(time.time() - t0))
+
 # submission = pd.DataFrame({'pred':test_preds.mean(axis=1)})
 # submission.to_csv(r'sub{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M%S')),header=None,
 #                   index=False, float_format='%.4f')

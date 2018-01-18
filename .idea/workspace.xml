@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74075eba-c56a-4084-b027-aa3709554c84" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/boston.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/bloodsugar.py" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/bloodsugar.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/data/d_train_20180102.csv" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/data/d_train_20180102.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/featureHandle.py" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/featureHandle.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bloodsugar_Prediction/gbdt.py" afterPath="$PROJECT_DIR$/Bloodsugar_Prediction/gbdt.py" />
     </list>
     <ignored path="machine_learning.iws" />
@@ -35,7 +29,7 @@
     <SUITE FILE_PATH="coverage/machine_learning$logRegres.coverage" NAME="logRegres Coverage Results" MODIFIED="1513913530287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/LOGISTIC" />
     <SUITE FILE_PATH="coverage/machine_learning$treePlotter.coverage" NAME="treePlotter Coverage Results" MODIFIED="1506482144924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/TREE" />
     <SUITE FILE_PATH="coverage/machine_learning$parameter.coverage" NAME="parameter Coverage Results" MODIFIED="1515677277244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bloodsugar_Prediction" />
-    <SUITE FILE_PATH="coverage/machine_learning$gbdt.coverage" NAME="gbdt Coverage Results" MODIFIED="1516185672137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bloodsugar_Prediction" />
+    <SUITE FILE_PATH="coverage/machine_learning$gbdt.coverage" NAME="gbdt Coverage Results" MODIFIED="1516260940660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bloodsugar_Prediction" />
     <SUITE FILE_PATH="coverage/machine_learning$KNN.coverage" NAME="KNN Coverage Results" MODIFIED="1514018829856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/kNN" />
     <SUITE FILE_PATH="coverage/machine_learning$featureHandle.coverage" NAME="featureHandle Coverage Results" MODIFIED="1516178825946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Bloodsugar_Prediction" />
     <SUITE FILE_PATH="coverage/machine_learning$KNN_ism4.coverage" NAME="KNN_ism4 Coverage Results" MODIFIED="1511330570615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/liyang/Numpy/kNN" />
@@ -115,11 +109,11 @@
       <file leaf-file-name="gbdt.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/gbdt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75609756">
-              <caret line="91" column="53" selection-start-line="70" selection-start-column="2" selection-end-line="91" selection-end-column="53" />
+            <state vertical-scroll-proportion="2.6666667">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <element signature="e#14#25#0" expanded="true" />
-                <marker date="1516187807000" expanded="true" signature="971:1119" placeholder="..." />
+                <marker date="1516266405000" expanded="true" signature="988:1136" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -149,7 +143,7 @@
         <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1000" column="118" selection-start-line="1000" selection-start-column="118" selection-end-line="1000" selection-end-column="118" />
+              <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -240,8 +234,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1652" />
-    <option name="y" value="74" />
+    <option name="x" value="-1794" />
     <option name="width" value="1382" />
     <option name="height" value="826" />
   </component>
@@ -859,11 +852,17 @@
       <option name="project" value="LOCAL" />
       <updated>1516095772995</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="预测血糖值">
+      <created>1516187813566</created>
+      <option name="number" value="00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1516187813566</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1652" y="74" width="1382" height="826" extended-state="0" />
+    <frame x="-1794" y="0" width="1382" height="826" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21716417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1212,22 +1211,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_train_20180102.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5642" column="189" selection-start-line="5642" selection-start-column="189" selection-end-line="5642" selection-end-column="189" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1000" column="118" selection-start-line="1000" selection-start-column="118" selection-end-line="1000" selection-end-column="118" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/bloodsugar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1254,6 +1237,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_train_20180102.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5642" column="189" selection-start-line="5642" selection-start-column="189" selection-end-line="5642" selection-end-column="189" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/d_test_A_20180102.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/data/lable_pre.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1272,11 +1271,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Bloodsugar_Prediction/gbdt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75609756">
-          <caret line="91" column="53" selection-start-line="70" selection-start-column="2" selection-end-line="91" selection-end-column="53" />
+        <state vertical-scroll-proportion="2.6666667">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
             <element signature="e#14#25#0" expanded="true" />
-            <marker date="1516187807000" expanded="true" signature="971:1119" placeholder="..." />
+            <marker date="1516266405000" expanded="true" signature="988:1136" placeholder="..." />
           </folding>
         </state>
       </provider>
