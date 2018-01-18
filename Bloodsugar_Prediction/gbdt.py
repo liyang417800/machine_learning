@@ -91,6 +91,6 @@ for i, (train_index, test_index) in enumerate(kf):
 print('线下得分：    {}'.format(mean_squared_error(train_feat['血糖'],train_preds)*0.5))
 print('CV训练用时{}秒'.format(time.time() - t0))
 
-# submission = pd.DataFrame({'pred':test_preds.mean(axis=1)})
-# submission.to_csv(r'sub{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M%S')),header=None,
-#                   index=False, float_format='%.4f')
+submission = pd.DataFrame({'pred':test_preds.mean(axis=1)})
+submission.to_csv(r'sub{}.csv'.format(datetime.datetime.now().strftime('%Y%m%d_%H%M%S')),header=None,
+                  index=False, float_format='%.4f')
