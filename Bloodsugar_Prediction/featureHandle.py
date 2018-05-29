@@ -59,47 +59,52 @@ test = pd.read_csv(feature_save_path_t)
 
 
 #特征重要性
-# from sklearn.cross_validation import cross_val_score, ShuffleSplit
-# # from sklearn.datasets import load_boston
-# from sklearn.ensemble import RandomForestRegressor
-#
-# def get_features_target(data):
-#     data_array=pd.np.array(data)#传入dataframe，为了遍历，先转为array
-#     features_list=[]
-#     target_list=[]
-#     for line in data_array:
-#         temp_list=[]
-#         for i in range(0,42):
-#             if i == 1:
-#                 if line[i]=="男":
-#                     line[i]=1
-#                 else:
-#                     line[i]=0
-#             if i ==3:
-#                 line[3] = line[3].replace('/','')
-#             if i == 41 :
-#                 target_temp=(line[i])
-#             else:
-#                 temp_list.append(line[i])
-#         features_list.append(temp_list)
-#         target_list.append(target_temp)
-#     return features_list, target_list
-# feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
-# # feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该文件
-# data = pd.read_csv(feature_save_path)
-#
-# data = data.fillna(0)
-#
-# feature,lable = get_features_target(data)
+from sklearn.cross_validation import cross_val_score, ShuffleSplit
+# from sklearn.datasets import load_boston
+from sklearn.ensemble import RandomForestRegressor
+
+def get_features_target(data):
+    data_array=pd.np.array(data)#传入dataframe，为了遍历，先转为array
+    features_list=[]
+    target_list=[]
+    for line in data_array:
+        temp_list=[]
+        for i in range(0,42):
+            if i == 1:
+                if line[i]=="男":
+                    line[i]=1
+                else:
+                    line[i]=0
+            if i ==3:
+                line[3] = line[3].replace('/','')
+            if i == 41 :
+                target_temp=(line[i])
+            else:
+                temp_list.append(line[i])
+        features_list.append(temp_list)
+        target_list.append(target_temp)
+    return features_list, target_list
+feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存入该文件
+# feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该文件
+data = pd.read_csv(feature_save_path)
+
+data = data.fillna(0)
+
+feature,lable = get_features_target(data)
+
+
+#得到每个特征的分数
 # names = list(data.columns)
-# # print names
+# # # print names
 # feature = np.array(feature)
-# # print feature.head()
 # # print feature[:, 0:0+1]
-#
+# #
 # rf = RandomForestRegressor(n_estimators=20, max_depth=4)
 # scores = []
-#
+# # names  = list(str(names).decode('string_escape'))
+# # print names
+# #
+# #
 # for i in range(feature.shape[1]):
 #      score = cross_val_score(rf, feature[:, i:i+1], lable, scoring="r2",
 #                               cv=ShuffleSplit(len(feature), 3, .3))
@@ -107,15 +112,16 @@ test = pd.read_csv(feature_save_path_t)
 # print sorted(scores, reverse=True)
 
 
-
-# print data['*天门冬氨酸氨基转换酶']
-
+#查看数据集的
 # print data.describe().astype(np.int64).T
 # print data['*天门冬氨酸氨基转换酶']
 # data['*天门冬氨酸氨基转换酶'].plot()
 # plt.show()
-
+#
 # print data['*天门冬氨酸氨基转换酶'].describe()
+#
+# lable  = sorted(lable)
+# print lable
 
 # 画图删除数据（离群值）
 # 训练数据中可能存在其他离群值。然而，如果测试数据中也有异常值，除去所有这些可能会严重影响我们的模型。这就是为什么我们不把它们全部移除，而是设法使我们的一些模型对它们健壮。你可以参考这个笔记本的造型部分。
@@ -124,17 +130,16 @@ test = pd.read_csv(feature_save_path_t)
 # plt.ylabel('血糖', fontsize=13)
 # plt.xlabel('天门冬氨酸氨基转换酶', fontsize=13)
 # plt.show()
-
-#
-#
-# train = data.drop(data[(data['血糖']>20)].index)
+# #
+# #
+# train = data.drop(data[(data['血糖']>25)].index)
 # fig, ax = plt.subplots()
 # ax.scatter(x = train['*天门冬氨酸氨基转换酶'], y = train['血糖'])
 # plt.ylabel('血糖', fontsize=13)
 # plt.xlabel('天门冬氨酸氨基转换酶', fontsize=13)
 # plt.show()
 
-#Target Variable（目标变量分析）
+# Target Variable（目标变量分析）
 # mu = 5.63 and sigma = 1.54
 # sns.distplot(data['血糖'] , fit=norm);
 #
@@ -187,7 +192,7 @@ test = pd.read_csv(feature_save_path_t)
 # all_data_na = all_data_na.drop(all_data_na[all_data_na == 0].index).sort_values(ascending=False)[:30]
 # missing_data = pd.DataFrame({'Missing Ratio' :all_data_na})
 # print missing_data.head(20)
-# #
+# # #
 # f, ax = plt.subplots(figsize=(15, 12))
 # plt.xticks(rotation='90')
 # sns.barplot(x=all_data_na.index, y=all_data_na)
@@ -209,32 +214,36 @@ test = pd.read_csv(feature_save_path_t)
 # 需要查看官方文档，找到现有特征的联系，进行新特征的衍生
 # all_data['TotalSF'] = all_data['TotalBsmtSF'] + all_data['1stFlrSF'] + all_data['2ndFlrSF']
 
-# numeric_feats = data.dtypes[data.dtypes != "object"].index
+
+
+# Check the skew of all numerical features
+numeric_feats = data.dtypes[data.dtypes != "object"].index
+print numeric_feats
+
+# Check the skew of all numerical features特征斜率处理
+skewed_feats = data[numeric_feats].apply(lambda x: skew(x.dropna())).sort_values(ascending=False)
+print("\nSkew in numerical features: \n")
+skewness = pd.DataFrame({'Skew' :skewed_feats})
+print skewness.head(10)
+# # # #
+skewness = skewness[abs(skewness) > 0.75]
+print("There are {} skewed numerical features to Box Cox transform".format(skewness.shape[0]))
 # #
-# # # Check the skew of all numerical features
-# skewed_feats = data[numeric_feats].apply(lambda x: skew(x.dropna())).sort_values(ascending=False)
-# print("\nSkew in numerical features: \n")
-# skewness = pd.DataFrame({'Skew' :skewed_feats})
-# print skewness.head(10)
-# #
-# skewness = skewness[abs(skewness) > 0.75]
-# print("There are {} skewed numerical features to Box Cox transform".format(skewness.shape[0]))
-# #
-# from scipy.special import boxcox1p
-# skewed_features = skewness.index
-# lam = 0.15
-# for feat in skewed_features:
-#     #all_data[feat] += 1
-#     data[feat] = boxcox1p(data[feat], lam)
+from scipy.special import boxcox1p
+skewed_features = skewness.index
+lam = 0.15
+for feat in skewed_features:
+    #all_data[feat] += 1
+    data[feat] = boxcox1p(data[feat], lam)
 #
 #
-# numeric_feats = data.dtypes[data.dtypes != "object"].index
-#
-# # Check the skew of all numerical features
-# skewed_feats = data[numeric_feats].apply(lambda x: skew(x.dropna())).sort_values(ascending=False)
-# print("\nSkew in numerical features: \n")
-# skewness = pd.DataFrame({'Skew' :skewed_feats})
-# print skewness.head(10)
+numeric_feats = data.dtypes[data.dtypes != "object"].index
+
+
+skewed_feats = data[numeric_feats].apply(lambda x: skew(x.dropna())).sort_values(ascending=False)
+print("\nSkew in numerical features: \n")
+skewness = pd.DataFrame({'Skew' :skewed_feats})
+print skewness.head(10)
 
 #Select Variables
 # print data['血糖'].describe()

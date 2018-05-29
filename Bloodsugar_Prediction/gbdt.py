@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import lightgbm as lgb
 from dateutil.parser import parse
+from scipy.stats import skew
 from sklearn.cross_validation import KFold
 from sklearn.metrics import mean_squared_error
 
@@ -18,6 +19,45 @@ data_path = './data/'
 
 train = pd.read_csv(data_path+'d_train_20180102.csv')
 test = pd.read_csv(data_path+'d_test_A_20180102.csv')
+
+#0.975342143934
+#删除特征重要性低的特征:尿酸,高密度脂蛋白胆固醇
+# train = train.drop('乙肝表面抗原',1)
+train = train.drop('乙肝e抗体',1)
+# test = test.drop('乙肝表面抗原',1)
+test = test.drop('乙肝e抗体',1)
+# train["血糖"] = np.log1p(train["血糖"])
+train = train.drop(train[(train['血糖']>25)].index)
+
+all_data = pd.concat((train, test)).reset_index(drop=True)
+
+
+numeric_feats = all_data.dtypes[all_data.dtypes != "object"].index
+
+# Check the skew of all numerical features
+skewed_feats = all_data[numeric_feats].apply(lambda x: skew(x.dropna())).sort_values(ascending=False)
+print("\nSkew in numerical features: \n")
+skewness = pd.DataFrame({'Skew' :skewed_feats})
+skewness.head(10)
+
+skewness = skewness[abs(skewness) > 0.75]
+print("There are {} skewed numerical features to Box Cox transform".format(skewness.shape[0]))
+
+from scipy.special import boxcox1p
+skewed_features = skewness.index
+lam = 0.15
+for feat in skewed_features:
+    #all_data[feat] += 1
+    all_data[feat] = boxcox1p(all_data[feat], lam)
+all_data[skewed_features] = np.log1p(all_data[skewed_features])
+
+# ntrain = train.shape[0]
+# ntest = test.shape[0]
+# train = all_data[:ntrain]
+# test = all_data[ntrain:]
+
+
+
 
 
 def make_feat(train,test):
@@ -40,6 +80,8 @@ def make_feat(train,test):
 
 
 train_feat,test_feat = make_feat(train,test)
+
+
 
 predictors = [f for f in test_feat.columns if f not in ['血糖']]
 

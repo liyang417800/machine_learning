@@ -53,6 +53,9 @@ feature_save_path = "./data/d_train_20180102.csv"  #将最终生成的特征存�
 # feature_save_path = "./data/lable_pre.csv"  #将最终生成的特征存入该文件
 data = pd.read_csv(feature_save_path)
 data = data.fillna(0)
+#删除特征重要性低的特征:尿酸,高密度脂蛋白胆固醇
+
+
 
 # data.sort(["id"]) 排序
 # data = data[0:100]
