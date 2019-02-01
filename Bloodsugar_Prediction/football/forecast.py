@@ -117,8 +117,8 @@ logreg.fit(X_train, y_train)
 score = logreg.score(X_train, y_train)
 score2 = logreg.score(X_test, y_test)
 
-print("Training set accuracy: ", '%.3f'%(score))
-print("Test set accuracy: ", '%.3f'%(score2))
+# print("Training set accuracy: ", '%.3f'%(score))
+# print("Test set accuracy: ", '%.3f'%(score2))
 
 
 #adding Fifa rankings
@@ -167,24 +167,102 @@ pred_set = pred_set[final.columns]
 # Remove winning team column
 pred_set = pred_set.drop(['winning_team'], axis=1)
 
-print pred_set.head(1)
+# print pred_set.head(1)
+#group matches
+
+predictions = logreg.predict(pred_set)
+
+print predictions
+
+for i in range(fixtures.shape[0]):
+    print(backup_pred_set.iloc[i, 1] + " and " + backup_pred_set.iloc[i, 0])
+    if predictions[i] == 2:
+        print("Winner: " + backup_pred_set.iloc[i, 1])
+    elif predictions[i] == 1:
+        print("Draw")
+    elif predictions[i] == 0:
+        print("Winner: " + backup_pred_set.iloc[i, 0])
+    print('Probability of ' + backup_pred_set.iloc[i, 1] + ' winning: ', '%.3f'%(logreg.predict_proba(pred_set)[i][2]))
+    print('Probability of Draw: ', '%.3f'%(logreg.predict_proba(pred_set)[i][1]))
+    print('Probability of ' + backup_pred_set.iloc[i, 0] + ' winning: ', '%.3f'%(logreg.predict_proba(pred_set)[i][0]))
+    print("")
+
+# List of tuples before
+group_16 = [('Uruguay', 'Portugal'),
+            ('France', 'Croatia'),
+            ('Brazil', 'Mexico'),
+            ('England', 'Colombia'),
+            ('Spain', 'Russia'),
+            ('Argentina', 'Peru'),
+            ('Germany', 'Switzerland'),
+            ('Poland', 'Belgium')]
+def clean_and_predict(matches, ranking, final, logreg):
+    # Initialization of auxiliary list for data cleaning
+    positions = []
+    # Loop to retrieve each team's position according to FIFA ranking
+    for match in matches:
+        positions.append(ranking.loc[ranking['Team'] == match[0],'Position'].iloc[0])
+        positions.append(ranking.loc[ranking['Team'] == match[1],'Position'].iloc[0])
+
+    # Creating the DataFrame for prediction
+    pred_set = []
+    # Initializing iterators for while loop
+    i = 0
+    j = 0
+    # 'i' will be the iterator for the 'positions' list, and 'j' for the list of matches (list of tuples)
+    while i < len(positions):
+        dict1 = {}
+
+        # If position of first team is better, he will be the 'home' team, and vice-versa
+        if positions[i] < positions[i + 1]:
+            dict1.update({'home_team': matches[j][0], 'away_team': matches[j][1]})
+        else:
+            dict1.update({'home_team': matches[j][1], 'away_team': matches[j][0]})
+
+        # Append updated dictionary to the list, that will later be converted into a DataFrame
+        pred_set.append(dict1)
+        i += 2
+        j += 1
+
+    # Convert list into DataFrame
+    pred_set = pd.DataFrame(pred_set)
+    backup_pred_set = pred_set
+
+    # Get dummy variables and drop winning_team column
+    pred_set = pd.get_dummies(pred_set, prefix=['home_team', 'away_team'], columns=['home_team', 'away_team'])
+
+    # Add missing columns compared to the model's training dataset
+    missing_cols2 = set(final.columns) - set(pred_set.columns)
+    for c in missing_cols2:
+        pred_set[c] = 0
+    pred_set = pred_set[final.columns]
+
+    # Remove winning team column
+    pred_set = pred_set.drop(['winning_team'], axis=1)
+
+    # Predict!
+    predictions = logreg.predict(pred_set)
+    for i in range(len(pred_set)):
+        print(backup_pred_set.iloc[i, 1] + " and " + backup_pred_set.iloc[i, 0])
+        if predictions[i] == 2:
+            print("Winner: " + backup_pred_set.iloc[i, 1])
+        elif predictions[i] == 1:
+            print("Draw")
+        elif predictions[i] == 0:
+            print("Winner: " + backup_pred_set.iloc[i, 0])
+        print('Probability of ' + backup_pred_set.iloc[i, 1] + ' winning: ' , '%.3f'%(logreg.predict_proba(pred_set)[i][2]))
+        print('Probability of Draw: ', '%.3f'%(logreg.predict_proba(pred_set)[i][1]))
+        print('Probability of ' + backup_pred_set.iloc[i, 0] + ' winning: ', '%.3f'%(logreg.predict_proba(pred_set)[i][0]))
+        print("")
+
+clean_and_predict(group_16, ranking, final, logreg)
 
 
+# List of matches
+semi = [('Portugal', 'Brazil'),
+        ('Argentina', 'Germany')]
+clean_and_predict(semi, ranking, final, logreg)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Finals
+finals = [('Brazil', 'Germany')]
+clean_and_predict(finals, ranking, final, logreg)
