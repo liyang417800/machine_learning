@@ -2,3 +2,6 @@
 1 http_restful,构造api接口样例(以拿到的json格式为例,实际数据需要根据结构适配调整)
 2 httpget_csv,通过http请求获取api数据,解析保存到csv
 3 rainfall_plot,plot解析csv画图,保存
+
+依赖包：
+flask、urllib2、json、csv、pandas、matplotlib
